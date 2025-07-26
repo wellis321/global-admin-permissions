@@ -1,0 +1,5 @@
+I have this one page site that is to help non technical people understand the permissions of a global administrator in microsoft.
+
+I want them to know that when a global adminisstrator goes to teams on the browser and then opens the file tab and then enters a search term that they dont see any other files apart from their own and any other files that have been shared with them.
+
+This is all because a global administrator in an organisation has been accused of by passing the usal ways of accessing personal data in the organisation and used their global admin permissions to try and view filews they shouldnt be able to see. Even though theyve been accused of this that was never their intention but they want to prove that the accusation is impossible to do in the way set out and that if they did that there would be logs and eveidence that they had accessed files.

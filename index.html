@@ -55,37 +55,57 @@
         </div>
 
         <div class="demo-section">
-            <h2 class="icon-search">Demonstration: Teams Files Tab Search</h2>
+            <h2 class="icon-search">Can a Global Admin Search Everyone's Files in Teams?</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                This shows what happens when a Global Admin tries to search for files in Teams
+                This quick walkthrough exposes a common myth: that a Global Admin can use the Teams Files tab to view
+                everyone's documents.
             </p>
 
             <div class="demo-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Open Teams in Browser</h3>
-                    <p>Global Admin logs into Microsoft Teams through the web browser</p>
+                    <h3>Open Microsoft Teams</h3>
+                    <p>The Global Admin signs into Teams via the web browser — same interface as any regular user.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Navigate to Files Tab</h3>
-                    <p>Click on the "Files" tab in the left navigation panel</p>
+                    <h3>Go to the Files Tab</h3>
+                    <p>They click on the “Files” tab in the navigation panel expecting broad visibility.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Enter Search Term</h3>
-                    <p>Type any search term in the search box to look for files</p>
+                    <h3>Enter a Search Term</h3>
+                    <p>They search for a known file that belongs to someone else — not shared with them.</p>
                 </div>
 
                 <div class="step">
                     <div class="step-number">4</div>
-                    <h3>Results Are Limited</h3>
-                    <p>Only shows files the admin owns or has been explicitly shared with them</p>
+                    <h3>Result: <span style="color: crimson;">Access Denied</span></h3>
+                    <p>The Global Admin sees <strong>no results</strong>. The search is permission-scoped. They only see
+                        files they personally have access to.</p>
                 </div>
+
+
             </div>
+            <div class="highlight-box">
+                <h3>Key Takeaway</h3>
+                <p><strong>Being a Global Administrator does not override file permissions in Teams.</strong> The Files
+                    tab only shows files:</p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: #2c3e50;">
+                    <li>They uploaded</li>
+                    <li>They own</li>
+                    <li>That have been explicitly shared with them</li>
+                </ul>
+                <p>Teams is just a front-end for SharePoint and OneDrive — and both enforce strict access controls, even
+                    for Global Admins.</p>
+            </div>
+
+
+
         </div>
+
 
         <div class="evidence-section">
             <h2 class="icon-audit">Evidence and Audit Trails</h2>
@@ -190,97 +210,168 @@
                 which are fully audited
             </p>
 
-            <table class="scenarios-table">
-                <thead>
-                    <tr>
-                        <th>Method</th>
-                        <th>Steps Required</th>
-                        <th>Audit Trail</th>
-                        <th>Use Case</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>eDiscovery/Content Search</strong></td>
-                        <td>
-                            <ul style="margin: 0; padding-left: 1rem;">
-                                <li>Access Microsoft Purview Compliance Center</li>
-                                <li>Create content search</li>
-                                <li>Define search criteria</li>
-                                <li>Export results</li>
-                            </ul>
-                        </td>
-                        <td><span class="audit-status logged">Fully Logged</span></td>
-                        <td>Legal compliance, investigations</td>
-                    </tr>
-                    <tr>
-                        <td><strong>SharePoint Admin Center</strong></td>
-                        <td>
-                            <ul style="margin: 0; padding-left: 1rem;">
-                                <li>Access SharePoint Admin Center</li>
-                                <li>Navigate to specific site</li>
-                                <li>Add self as site admin</li>
-                                <li>Access site content</li>
-                            </ul>
-                        </td>
-                        <td><span class="audit-status logged">Fully Logged</span></td>
-                        <td>Site management, troubleshooting</td>
-                    </tr>
-                    <tr>
-                        <td><strong>OneDrive Admin Center</strong></td>
-                        <td>
-                            <ul style="margin: 0; padding-left: 1rem;">
-                                <li>Access OneDrive Admin Center</li>
-                                <li>Select user account</li>
-                                <li>Access user's OneDrive</li>
-                                <li>Browse files and folders</li>
-                            </ul>
-                        </td>
-                        <td><span class="audit-status logged">Fully Logged</span></td>
-                        <td>User support, data recovery</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Microsoft Graph API</strong></td>
-                        <td>
-                            <ul style="margin: 0; padding-left: 1rem;">
-                                <li>Register application</li>
-                                <li>Grant admin consent</li>
-                                <li>Use API (e.g. Files.Read.All) with delegated or application permissions</li>
-                                <li>Access data programmatically</li>
-                            </ul>
-                        </td>
-                        <td><span class="audit-status logged">Fully Logged</span></td>
-                        <td>Automation, custom applications</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Password Reset & Sign-in</strong></td>
-                        <td>
-                            <ul style="margin: 0; padding-left: 1rem;">
-                                <li>Reset user password</li>
-                                <li>Sign in as user</li>
-                                <li>Access user's files</li>
-                                <li>Sign out and restore password</li>
-                            </ul>
-                        </td>
-                        <td><span class="audit-status partial">Partially Logged</span></td>
-                        <td>Emergency access (not recommended)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Manual Folder Browsing</strong></td>
-                        <td>
-                            <ul style="margin: 0; padding-left: 1rem;">
-                                <li>Browse SharePoint or Teams Files tab</li>
-                                <li>Attempt search using search bar</li>
-                            </ul>
-                        </td>
-                        <td><span class="audit-status none">Logged as standard user activity (no elevated access)</span>
-                        </td>
-                        <td>Standard user experience only; limited to existing permissions</td>
-                    </tr>
+            <!-- Simplified Summary Table -->
+            <div class="highlight-box">
+                <h2 class="icon-table">Summary: How Can Files Be Accessed?</h2>
+                <p>This table explains, in plain terms, the common methods someone might use to access files — and
+                    whether it’s logged, allowed, or appropriate.</p>
+
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Access Method</th>
+                            <th>Needs Admin Role?</th>
+                            <th>Audit Trail?</th>
+                            <th>Legitimate?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Teams File Search</td>
+                            <td><span class="icon-no">No</span></td>
+                            <td>N/A (Permission limited)</td>
+                            <td><span class="icon-yes">Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td>SharePoint/OneDrive Browsing</td>
+                            <td><span class="icon-no">No (if files are shared)</span></td>
+                            <td><span class="icon-limited">Limited</span></td>
+                            <td><span class="icon-yes">Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td>eDiscovery Search</td>
+                            <td><span class="icon-yes">Yes</span></td>
+                            <td><span class="icon-yes">Fully Logged</span></td>
+                            <td><span class="icon-yes">Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td>Add Self to Site</td>
+                            <td><span class="icon-yes">Yes</span></td>
+                            <td><span class="icon-yes">Fully Logged</span></td>
+                            <td><span class="icon-yes">Yes</span></td>
+                        </tr>
+                        <tr>
+                            <td>Reset User Password & Sign In</td>
+                            <td><span class="icon-yes">Yes</span></td>
+                            <td><span class="icon-warning">Partially Logged</span></td>
+                            <td><span class="icon-no">Risky</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 1rem;"><strong>Key Point:</strong> No file access method is secret —
+                    everything leaves a record or requires sharing or elevated permissions.</p>
+            </div>
+
+            <!-- Collapsible Full Technical Table -->
+            <details style="margin-top: 2rem;">
+                <summary style="cursor: pointer; font-weight: bold; font-size: 1.1rem;">
+                    View Full Technical Table (For IT & Admins)
+                </summary>
+                <div style="margin-top: 1rem;">
+
+                    <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                        These are the deliberate steps a Global Administrator would need to take to access content - all
+                        of
+                        which are fully audited
+                    </p>
+                    <table class="scenarios-table">
+
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Steps Required</th>
+                                <th>Audit Trail</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>eDiscovery/Content Search</strong></td>
+                                <td>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Access Microsoft Purview Compliance Center</li>
+                                        <li>Create content search</li>
+                                        <li>Define search criteria</li>
+                                        <li>Export results</li>
+                                    </ul>
+                                </td>
+                                <td><span class="audit-status logged">Fully Logged</span></td>
+                                <td>Legal compliance, investigations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SharePoint Admin Center</strong></td>
+                                <td>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Access SharePoint Admin Center</li>
+                                        <li>Navigate to specific site</li>
+                                        <li>Add self as site admin</li>
+                                        <li>Access site content</li>
+                                    </ul>
+                                </td>
+                                <td><span class="audit-status logged">Fully Logged</span></td>
+                                <td>Site management, troubleshooting</td>
+                            </tr>
+                            <tr>
+                                <td><strong>OneDrive Admin Center</strong></td>
+                                <td>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Access OneDrive Admin Center</li>
+                                        <li>Select user account</li>
+                                        <li>Access user's OneDrive</li>
+                                        <li>Browse files and folders</li>
+                                    </ul>
+                                </td>
+                                <td><span class="audit-status logged">Fully Logged</span></td>
+                                <td>User support, data recovery</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Microsoft Graph API</strong></td>
+                                <td>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Register application</li>
+                                        <li>Grant admin consent</li>
+                                        <li>Use API (e.g. Files.Read.All) with delegated or application permissions</li>
+                                        <li>Access data programmatically</li>
+                                    </ul>
+                                </td>
+                                <td><span class="audit-status logged">Fully Logged</span></td>
+                                <td>Automation, custom applications</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Password Reset & Sign-in</strong></td>
+                                <td>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Reset user password</li>
+                                        <li>Sign in as user</li>
+                                        <li>Access user's files</li>
+                                        <li>Sign out and restore password</li>
+                                    </ul>
+                                </td>
+                                <td><span class="audit-status partial">Partially Logged</span></td>
+                                <td>Emergency access (not recommended)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Manual Folder Browsing</strong></td>
+                                <td>
+                                    <ul style="margin: 0; padding-left: 1rem;">
+                                        <li>Browse SharePoint or Teams Files tab</li>
+                                        <li>Attempt search using search bar</li>
+                                    </ul>
+                                </td>
+                                <td><span class="audit-status none">Logged as standard user activity (no elevated
+                                        access)</span>
+                                </td>
+                                <td>Standard user experience only; limited to existing permissions</td>
+                            </tr>
 
 
-                </tbody>
-            </table>
+                        </tbody>
+
+                    </table>
+                </div>
+            </details>
+
 
             <div class="highlight-box">
                 <h3 class="icon-lightbulb">Key Points About These Methods</h3>

@@ -420,7 +420,13 @@ body {
 .scenarios-table td {
     padding: 0.75rem;
     border-bottom: 1px solid #e9ecef;
-    vertical-align: top;
+    vertical-align: middle;
+}
+
+/* Left align the Audit Trail column specifically */
+.scenarios-table td:nth-child(3) {
+    text-align: left;
+    vertical-align: middle;
 }
 
 .scenarios-table tr:last-child td {
@@ -434,11 +440,13 @@ body {
 .audit-status {
     display: inline-flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 0.25rem;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 500;
+    min-width: 120px;
 }
 
 .audit-status.logged {
@@ -645,4 +653,124 @@ body {
 
 .evidence-icon.compliance {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23667eea'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 14H7v-2h10v2zm0-4H7v-2h10v2zm0-4H7V7h10v2z'/%3E%3C/svg%3E");
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.summary-table th,
+.summary-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-table thead {
+    background-color: #f3f4f6;
+    font-weight: 600;
+}
+
+.summary-table td:nth-child(3),
+.summary-table td:nth-child(4) {
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Ensure consistent alignment for all cells in the summary table */
+.summary-table td {
+    vertical-align: middle;
+}
+
+/* Left align the icon spans within cells */
+.summary-table .icon-yes,
+.summary-table .icon-no,
+.summary-table .icon-warning,
+.summary-table .icon-limited {
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Table Status Icons */
+.icon-yes {
+    color: #27ae60;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-yes::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2327ae60'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-no {
+    color: #e74c3c;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-no::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23e74c3c'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-warning {
+    color: #f39c12;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-warning::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f39c12'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon-limited {
+    color: #95a5a6;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon-limited::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2395a5a6'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Table icon for the summary table header */
+.icon-table::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c3e50'%3E%3Cpath d='M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: middle;
 }

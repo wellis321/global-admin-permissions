@@ -84,13 +84,13 @@ body {
     gap: 0.5rem;
 }
 
-.card h2::before {
+/* .card h2::before {
     content: '';
     width: 3px;
     height: 20px;
     background: #2c3e50;
     border-radius: 1px;
-}
+} */
 
 .card p {
     margin-bottom: 1rem;

@@ -19,39 +19,66 @@
 
         <div class="main-content">
             <div class="card">
-                <h2 class="icon-lock">What Global Admins CANNOT Do</h2>
-                <p>Contrary to common misconceptions, Global Administrators have significant limitations when it comes
-                    to accessing user files:</p>
+                <h2>❌ What Global Admins <em>Cannot</em> Do</h2>
+                <p>
+                    Despite their high-level role, Global Administrators <strong>do not have automatic access</strong>
+                    to everyone’s files or private content. Like all users, they are bound by Microsoft 365’s security
+                    rules:
+                </p>
                 <ul>
-                    <li><strong>Cannot browse user files</strong> through Teams interface</li>
-                    <li><strong>Cannot search across all files</strong> through Teams Files tab</li>
-                    <li><strong>Cannot casually browse OneDrive files</strong> through Teams interface</li>
-                    <li><strong>Cannot browse private Teams chats</strong> through Teams interface</li>
-                    <li><strong>Cannot casually browse SharePoint sites</strong> through Teams interface</li>
+                    <li><strong>They cannot search across everyone’s files in Teams</strong><br>
+                        (Search results only show files they already have permission to access.)
+                    </li>
+                    <li><strong>They cannot read private Teams chats or messages</strong><br>
+                        (Private chats are protected unless accessed through legal tools like eDiscovery.)
+                    </li>
+                    <li><strong>They cannot view OneDrive or SharePoint files unless shared with them</strong><br>
+                        (They must be added manually or use administrative tools — and both actions are logged.)
+                    </li>
+                    <li><strong>They cannot bypass file permissions through the Teams interface</strong><br>
+                        (Even with full admin rights, they’re still blocked unless access is explicitly granted.)
+                    </li>
+                    <li><strong>They cannot access files or folders without leaving a trace</strong><br>
+                        (Any access attempt — direct or through tools — is recorded in the audit logs.)
+                    </li>
                 </ul>
                 <div class="warning">
-                    <strong>Important:</strong>Global Admins do not automatically have access to all files or chats.
-                    Like any user, they are restricted by Microsoft 365 permissions unless they explicitly elevate their
-                    access — which is always logged.
+                    <strong>Important:</strong> Microsoft 365 enforces strict access controls — even for Global Admins.
+                    No one can quietly browse or search through user files without being detected.
                 </div>
             </div>
 
+
             <div class="card">
-                <h2 class="icon-admin">What Global Admins CAN Do</h2>
-                <p>Global Admins have specific administrative capabilities, but these are deliberate actions that leave
-                    audit trails:</p>
+                <h2>✅ What Global Admins <em>Can</em> Do</h2>
+                <p>
+                    Global Administrators are responsible for managing the health, security, and access across Microsoft
+                    365. Their role includes powerful tools — but not unlimited access:
+                </p>
                 <ul>
-                    <li><strong>Use eDiscovery tools</strong> for legal compliance</li>
-                    <li><strong>Access audit logs</strong> for security monitoring</li>
-                    <li><strong>Reset user passwords</strong> (not recommended for file access)</li>
-                    <li><strong>Add themselves to sites</strong> as administrators</li>
-                    <li><strong>Use Microsoft Graph API</strong> with proper permissions</li>
+                    <li><strong>Configure security and access settings</strong><br>
+                        (They manage who has access to what, including roles, licenses, and policies.)
+                    </li>
+                    <li><strong>Reset passwords and unlock accounts</strong><br>
+                        (Helping staff regain access to their accounts — though not intended for data access.)
+                    </li>
+                    <li><strong>Run organization-wide reports and dashboards</strong><br>
+                        (They can monitor system usage, security, and compliance through built-in tools.)
+                    </li>
+                    <li><strong>Set up new apps and services</strong><br>
+                        (Admins can deploy Teams, SharePoint, or Exchange for the organization.)
+                    </li>
+                    <li><strong>Support investigations when authorized</strong><br>
+                        (They can run searches or access files, but only through official tools with full logging.)
+                    </li>
                 </ul>
-                <div class="success">
-                    <strong>Key Point:</strong> All administrative actions are logged and traceable in the Microsoft 365
-                    Unified Audit Log.
+                <div class="warning">
+                    <strong>Important:</strong> Global Admins help manage systems and enforce policies — but they do
+                    <em>not</em> have automatic access to private files, messages, or user content.
                 </div>
             </div>
+
+
         </div>
 
         <div class="demo-section">
@@ -145,40 +172,40 @@
         </div>
 
         <div class="demo-section">
-            <h2 class="icon-chart">Microsoft 365 Unified Audit Log - The Complete Record</h2>
+            <h2 class="icon-chart">Microsoft 365 Unified Audit Log – The Complete Record</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Every action taken by a Global Administrator is recorded in the Unified Audit Log, which cannot be
-                modified or deleted. While audit logging can technically be disabled, doing so is extremely rare,
-                auditable, and would itself raise compliance concerns.
+                Every action taken by a Global Administrator is recorded in the Unified Audit Log, provided auditing is
+                enabled and the organization holds the appropriate Microsoft 365 license (such as E3 or E5). These logs
+                cannot be modified or deleted. While audit logging can technically be disabled, doing so is extremely
+                rare, auditable, and would itself raise compliance concerns.
             </p>
-
 
             <div class="main-content">
                 <div class="card">
                     <h2 class="icon-search">What Gets Logged</h2>
                     <ul>
-                        <li><strong>File access and downloads</strong> - Every file opened, viewed, or downloaded</li>
-                        <li><strong>Permission changes</strong> - When admins add themselves to sites or folders</li>
-                        <li><strong>eDiscovery searches</strong> - All content searches and exports</li>
-                        <li><strong>Password resets</strong> - When admin passwords are changed</li>
-                        <li><strong>Admin center access</strong> - Every login to administrative interfaces</li>
-                        <li><strong>API calls</strong> - All programmatic access to data</li>
-                        <li><strong>Teams activities</strong> - Administrative actions in Teams</li>
-                        <li><strong>SharePoint changes</strong> - Site access and modifications</li>
+                        <li><strong>File access and downloads</strong> – Every file opened, viewed, or downloaded</li>
+                        <li><strong>Permission changes</strong> – When admins add themselves to sites or folders</li>
+                        <li><strong>eDiscovery searches</strong> – All content searches and exports</li>
+                        <li><strong>Password resets</strong> – When admin passwords are changed</li>
+                        <li><strong>Admin center access</strong> – Every login to administrative interfaces</li>
+                        <li><strong>API calls</strong> – All programmatic access to data</li>
+                        <li><strong>Teams activities</strong> – Administrative actions in Teams</li>
+                        <li><strong>SharePoint changes</strong> – Site access and modifications</li>
                     </ul>
                 </div>
 
                 <div class="card">
                     <h2 class="icon-audit">Log Details Captured</h2>
                     <ul>
-                        <li><strong>User ID</strong> - Who performed the action</li>
-                        <li><strong>Timestamp</strong> - Exact date and time (to the second)</li>
-                        <li><strong>IP Address</strong> - Where the action was performed from</li>
-                        <li><strong>Action Type</strong> - Specific operation performed</li>
-                        <li><strong>Resource Accessed</strong> - Which file, site, or data was accessed</li>
-                        <li><strong>Client Application</strong> - What tool or interface was used</li>
-                        <li><strong>Result</strong> - Whether the action succeeded or failed</li>
-                        <li><strong>Session ID</strong> - Links related actions together</li>
+                        <li><strong>User ID</strong> – Who performed the action</li>
+                        <li><strong>Timestamp</strong> – Exact date and time (to the second)</li>
+                        <li><strong>IP Address</strong> – Where the action was performed from</li>
+                        <li><strong>Action Type</strong> – Specific operation performed</li>
+                        <li><strong>Resource Accessed</strong> – Which file, site, or data was accessed</li>
+                        <li><strong>Client Application</strong> – What tool or interface was used</li>
+                        <li><strong>Result</strong> – Whether the action succeeded or failed</li>
+                        <li><strong>Session ID</strong> – Links related actions together</li>
                     </ul>
                 </div>
             </div>
@@ -194,13 +221,22 @@
                     <li>Where they accessed them from (IP address)</li>
                     <li>Whether the access was successful</li>
                 </ul>
-                <p style="margin-top: 1rem; font-weight: bold;">This audit log cannot be modified or deleted by Global
-                    Administrators - it's a permanent record.</p>
-                <p style="margin-top: 0.5rem;">Disabling audit logging requires deliberate action and is itself
-                    recorded. Any such change would typically trigger compliance scrutiny.</p>
-
+                <p style="margin-top: 1rem; font-weight: bold;">
+                    This audit log cannot be modified or deleted — not even by Global Administrators. It provides a
+                    transparent and tamper-proof record of access.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    Disabling audit logging requires deliberate administrative action and is itself recorded. Any such
+                    change would typically trigger compliance scrutiny.
+                </p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance"
+                        target="_blank">
+                        Learn more about Unified Audit Logs in Microsoft 365</a>
+                </p>
             </div>
         </div>
+
 
 
         <div class="access-scenarios">
@@ -412,7 +448,7 @@
         </div>
 
         <div class="resources">
-            <h2>📚 Official Microsoft Documentation</h2>
+            <h2> Official Microsoft Documentation</h2>
             <p>
                 These official Microsoft resources support the statements made throughout this page.
                 They explain how file access, admin roles, Teams/SharePoint integration, and audit logs

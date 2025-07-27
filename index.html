@@ -15,6 +15,31 @@
             <p>Understanding what Global Admins can and cannot access in Microsoft Teams and Microsoft 365</p>
         </div>
 
+        <div class="page-intro">
+            <p><em>For anyone concerned about Global Admin overreach in Teams and Microsoft 365 — here’s what Global
+                    Admins
+                    actually can (and can’t) do.</em></p>
+        </div>
+
+        <div class="access-flowchart">
+            <h3> How Access Actually Works</h3>
+            <div class="flow-row">
+                <div class="flow-box">
+                    <h4>Teams (Front End)</h4>
+                    <p>Only shows what the user has permission to see</p>
+                    <div class="no-access">❌ No special access</div>
+                </div>
+                <div class="flow-arrow">⬇</div>
+                <div class="flow-box">
+                    <h4>Admin Tools (Back End)</h4>
+                    <p>Admins must leave Teams and use secure admin tools</p>
+                    <div class="yes-access">✅ Fully logged access with audit trail</div>
+                </div>
+            </div>
+        </div>
+
+
+
         <!-- Key Takeaway - Prominent Position -->
         <div class="conclusion">
             <h2 class="icon-target">Key Takeaway</h2>
@@ -29,40 +54,12 @@
 
         <div class="main-content">
             <div class="card">
-                <h2>❌ What Global Admins <em>Cannot</em> Do</h2>
-                <p>
-                    Despite their high-level role, Global Administrators <strong>do not have automatic access</strong>
-                    to everyone's files or private content. Like all users, they are bound by Microsoft 365's security
-                    rules:
-                </p>
-                <ul>
-                    <li><strong>They cannot search across everyone's files in Teams</strong><br>
-                        (Search results only show files they already have permission to access.)
-                    </li>
-                    <li><strong>They cannot read private Teams chats or messages</strong><br>
-                        (Private chats are protected unless accessed through legal tools like eDiscovery.)
-                    </li>
-                    <li><strong>They cannot view OneDrive or SharePoint files unless shared with them</strong><br>
-                        (They must be added manually or use administrative tools — and both actions are logged.)
-                    </li>
-                    <li><strong>They cannot bypass file permissions through the Teams interface</strong><br>
-                        (Even with full admin rights, they're still blocked unless access is explicitly granted.)
-                    </li>
-                    <li><strong>They cannot access files or folders without leaving a trace</strong><br>
-                        (Any access attempt — direct or through tools — is recorded in the audit logs.)
-                    </li>
-                </ul>
-                <div class="warning">
-                    <strong>Important:</strong> Microsoft 365 enforces strict access controls — even for Global Admins.
-                    No one can quietly browse or search through user files without being detected.
-                </div>
-            </div>
-
-            <div class="card">
                 <h2>✅ What Global Admins <em>Can</em> Do</h2>
                 <p>
                     Global Administrators are responsible for managing the health, security, and access across Microsoft
-                    365. Their role includes powerful tools — but not unlimited access:
+                    365. Their role includes powerful tools — but all of this work is done in the <strong>back
+                        end</strong>
+                    (admin centers and tools), not through the usual front-end applications like Teams or Outlook:
                 </p>
                 <ul>
                     <li><strong>Configure security and access settings</strong><br>
@@ -77,7 +74,7 @@
                     <li><strong>Set up new apps and services</strong><br>
                         (Admins can deploy Teams, SharePoint, or Exchange for the organisation.)
                     </li>
-                    <li><strong>Support investigations when authorized</strong><br>
+                    <li><strong>Support investigations when authorised</strong><br>
                         (They can run searches or access files, but only through official tools with full logging.)
                     </li>
                 </ul>
@@ -86,12 +83,40 @@
                     <em>not</em> have automatic access to private files, messages, or user content.
                 </div>
             </div>
+            <div class="card">
+                <h2>❌ What Global Admins <em>Cannot</em> Do</h2>
+                <p>
+                    Despite their high-level role, Global Administrators <strong>do not have automatic access</strong>
+                    to everyone's files or private content. Like all users, they are bound by Microsoft 365's security
+                    rules:
+                </p>
+                <ul>
+                    <li><strong>They cannot search across everyone's files in Teams</strong><br>
+                        (Search results only show files they already have permission to access.)
+                    </li>
+                    <li><strong>They cannot read private Teams chats or messages</strong><br>
+                        (Private chats are protected unless accessed through legal/compliance tools.)
+                    </li>
+                    <li><strong>They cannot view OneDrive or SharePoint files unless shared with them</strong><br>
+                        (They must be added manually or use administrative tools — and both actions are logged.)
+                    </li>
+                    <li><strong>They cannot bypass file permissions through the Teams interface</strong><br>
+                        (Even with full admin rights, they're still blocked unless access is explicitly granted.)
+                    </li>
+                </ul>
+                <div class="warning">
+                    <strong>Important:</strong> Microsoft 365 enforces strict access controls — even for Global Admins.
+                    No one can quietly browse or search through user files without being detected.
+                </div>
+            </div>
+
+
         </div>
 
         <!-- Consolidated Front-End vs Back-End Section -->
         <section id="frontend-vs-backend">
             <div class="explanation">
-                <h2>Front End vs Back End: Why Teams Search Doesn't Work</h2>
+                <h2>Front End vs Back End: The Key Difference</h2>
                 <p>
                     The <strong>Front End</strong> is what people see and use every day — it's where Global Admins
                     behave exactly like regular users.
@@ -132,11 +157,23 @@
                 <p>
                     <strong>In Teams (Front End):</strong> Global Admins see exactly what any user sees — only their own
                     files
-                    and files shared with them. The search bar doesn't give them special powers.
+                    and files shared with them. They have no special access or hidden features.
                 </p>
 
+                <div class="info-box">
+                    <p><strong>If They Wanted to Access Other Files, They'd Need to Use Back-End Admin
+                            Tools:</strong></p>
+                </div>
+
                 <div class="hoops-explanation">
-                    <h4>If They Wanted to Access Other Files, They'd Need to Use Back-End Admin Tools:</h4>
+                    <h3>What Global Admins Would Have to Do (If They Really Needed Access)</h3>
+
+                    <div class="disclaimer-box">
+                        <p><strong>Note:</strong> The exact steps and workflows shown below may vary depending on your
+                            Microsoft 365 configuration and version. These are general examples of the types of
+                            processes Global Admins would need to follow.</p>
+                    </div>
+
                     <div class="hoops-grid">
 
                         <div class="hoop">
@@ -221,6 +258,12 @@
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">
                 Any time a Global Administrator accesses data, Microsoft 365 creates comprehensive audit records.
             </p>
+
+            <div class="disclaimer-box">
+                <p><strong>Note:</strong> The specific audit events and log details shown below may vary depending on
+                    your Microsoft 365 license, configuration, and security settings. These are common examples of what
+                    gets logged.</p>
+            </div>
 
             <div class="main-content">
                 <div class="card">

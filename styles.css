@@ -134,7 +134,7 @@ body {
 
 .step {
     background: #f8f9fa;
-    border-radius: 4px;
+    border-radius: 1px;
     padding: 1rem;
     border-left: 3px solid #2c3e50;
 }
@@ -856,4 +856,308 @@ body {
     display: inline-block;
     margin-right: 0.5rem;
     vertical-align: middle;
+}
+
+/* Front End vs Back End Section */
+#frontend-vs-backend {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#frontend-vs-backend h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+#frontend-vs-backend h2::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+
+    background-repeat: no-repeat;
+}
+
+.comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.comparison .column {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.comparison .column:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.comparison h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.comparison h3::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.comparison .column:first-child h3::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c3e50'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+}
+
+.comparison .column:last-child h3::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c3e50'%3E%3Cpath d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z'/%3E%3C/svg%3E");
+}
+
+.comparison ul {
+    list-style: none;
+    padding: 0;
+}
+
+.comparison li {
+    color: #555;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.comparison li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 6px;
+    height: 6px;
+    background: #2c3e50;
+    border-radius: 50%;
+}
+
+.comparison strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Responsive design for comparison */
+@media (max-width: 768px) {
+    .comparison {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    #frontend-vs-backend {
+        padding: 1.5rem;
+    }
+
+    #frontend-vs-backend h2 {
+        font-size: 1.5rem;
+    }
+
+    .comparison h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Explanation section styling */
+.explanation {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 1px;
+    border-left: 4px solid #2c3e50;
+}
+
+.explanation p {
+    color: #2c3e50;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.explanation p:last-child {
+    margin-bottom: 0;
+}
+
+.explanation strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.explanation .analogy {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #666;
+    position: relative;
+}
+
+.explanation .analogy::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0.5rem;
+    background: white;
+    padding: 0.25rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+}
+
+/* Access Reality Section */
+.access-reality {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.access-reality h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.access-reality>p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hoops-explanation h4 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.hoops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hoop {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.hoop:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.hoop-number {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #2c3e50;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.hoop h5 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem 0;
+    font-weight: 600;
+}
+
+.hoop p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.hoop-note {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.key-point {
+    background: #e8f4fd;
+    border: 1px solid #bee5eb;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.key-point p {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Responsive design for hoops */
+@media (max-width: 768px) {
+    .access-reality {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .hoops-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hoop {
+        padding: 1.25rem;
+    }
+
+    .access-reality h3 {
+        font-size: 1.3rem;
+    }
+
+    .hoops-explanation h4 {
+        font-size: 1.2rem;
+    }
 }

@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
     <title>Global Admin Permissions - What They Can & Cannot Do</title>
-
-
 </head>
 
 <body>
@@ -17,16 +15,28 @@
             <p>Understanding what Global Admins can and cannot access in Microsoft Teams and Microsoft 365</p>
         </div>
 
+        <!-- Key Takeaway - Prominent Position -->
+        <div class="conclusion">
+            <h2 class="icon-target">Key Takeaway</h2>
+            <p>
+                <strong>Global Administrators cannot search for or access files in Microsoft Teams beyond their own
+                    permissions.</strong>
+                The Teams interface shows them exactly what any regular user would see — only their own files and files
+                shared with them.
+                Any access to other files requires separate administrative tools that leave complete audit trails.
+            </p>
+        </div>
+
         <div class="main-content">
             <div class="card">
                 <h2>❌ What Global Admins <em>Cannot</em> Do</h2>
                 <p>
                     Despite their high-level role, Global Administrators <strong>do not have automatic access</strong>
-                    to everyone’s files or private content. Like all users, they are bound by Microsoft 365’s security
+                    to everyone's files or private content. Like all users, they are bound by Microsoft 365's security
                     rules:
                 </p>
                 <ul>
-                    <li><strong>They cannot search across everyone’s files in Teams</strong><br>
+                    <li><strong>They cannot search across everyone's files in Teams</strong><br>
                         (Search results only show files they already have permission to access.)
                     </li>
                     <li><strong>They cannot read private Teams chats or messages</strong><br>
@@ -36,7 +46,7 @@
                         (They must be added manually or use administrative tools — and both actions are logged.)
                     </li>
                     <li><strong>They cannot bypass file permissions through the Teams interface</strong><br>
-                        (Even with full admin rights, they’re still blocked unless access is explicitly granted.)
+                        (Even with full admin rights, they're still blocked unless access is explicitly granted.)
                     </li>
                     <li><strong>They cannot access files or folders without leaving a trace</strong><br>
                         (Any access attempt — direct or through tools — is recorded in the audit logs.)
@@ -47,7 +57,6 @@
                     No one can quietly browse or search through user files without being detected.
                 </div>
             </div>
-
 
             <div class="card">
                 <h2>✅ What Global Admins <em>Can</em> Do</h2>
@@ -62,11 +71,11 @@
                     <li><strong>Reset passwords and unlock accounts</strong><br>
                         (Helping staff regain access to their accounts — though not intended for data access.)
                     </li>
-                    <li><strong>Run organization-wide reports and dashboards</strong><br>
+                    <li><strong>Run organisation-wide reports and dashboards</strong><br>
                         (They can monitor system usage, security, and compliance through built-in tools.)
                     </li>
                     <li><strong>Set up new apps and services</strong><br>
-                        (Admins can deploy Teams, SharePoint, or Exchange for the organization.)
+                        (Admins can deploy Teams, SharePoint, or Exchange for the organisation.)
                     </li>
                     <li><strong>Support investigations when authorized</strong><br>
                         (They can run searches or access files, but only through official tools with full logging.)
@@ -77,107 +86,140 @@
                     <em>not</em> have automatic access to private files, messages, or user content.
                 </div>
             </div>
-
-
         </div>
 
-        <div class="demo-section">
-            <h2 class="icon-search">Can a Global Admin Search Everyone's Files in Teams?</h2>
+        <!-- Consolidated Front-End vs Back-End Section -->
+        <section id="frontend-vs-backend">
+            <div class="explanation">
+                <h2>Front End vs Back End: Why Teams Search Doesn't Work</h2>
+                <p>
+                    The <strong>Front End</strong> is what people see and use every day — it's where Global Admins
+                    behave exactly like regular users.
+                </p>
+                <p>
+                    The <strong>Back End</strong> is where Global Admins actually work: setting permissions, managing
+                    licenses, and keeping everything secure.
+                </p>
+                <p class="analogy">
+                    <em>Think of it like the difference between living in a house (front end) and being the building
+                        manager who controls the utilities, security systems, and access permissions (back end).</em>
+                </p>
+            </div>
+
+            <div class="comparison">
+                <div class="column">
+                    <h3>Front End (User Experience)</h3>
+                    <ul>
+                        <li>People see and use apps like Outlook, Teams, Word, SharePoint</li>
+                        <li>Users work with content they're permitted to</li>
+                        <li>Read team messages, upload files, join meetings</li>
+                        <li><strong>Global Admins are just "users" here</strong></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Back End (Admin Control)</h3>
+                    <ul>
+                        <li>Uses tools like Microsoft 365 Admin Center, Azure Portal, Entra</li>
+                        <li>Assigns or revokes roles and licenses</li>
+                        <li>Manages security, compliance, policies and settings</li>
+                        <li><strong>This is where Global Admins operate</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="access-reality">
+                <h3>Why Global Admins Can't Just "Search" Any Files in Teams</h3>
+                <p>
+                    <strong>In Teams (Front End):</strong> Global Admins see exactly what any user sees — only their own
+                    files
+                    and files shared with them. The search bar doesn't give them special powers.
+                </p>
+
+                <div class="hoops-explanation">
+                    <h4>If They Wanted to Access Other Files, They'd Need to Use Back-End Admin Tools:</h4>
+                    <div class="hoops-grid">
+
+                        <div class="hoop">
+                            <h5>Reset Someone's Password & Sign In as Them (Back-End)</h5>
+                            <p>Leave Teams → Go to Microsoft 365 Admin Center → Reset the user's password → Sign in as
+                                that user → Access their files → Sign out → Restore the password</p>
+                            <div class="hoop-note">⚠️ <strong>Partially logged, but very obvious</strong></div>
+                        </div>
+                        <div class="hoop">
+                            <h5>Add Themselves to a SharePoint Site (Back-End)</h5>
+                            <p>Leave Teams → Go to SharePoint Admin Center → Find the SharePoint site → Add themselves
+                                as admin →
+                                Access the files</p>
+                            <div class="hoop-note">✅ <strong>Fully logged and auditable</strong></div>
+                        </div>
+                        <div class="hoop">
+                            <h5>Use Microsoft 365 Admin Center (Back-End)</h5>
+                            <p>Leave Teams → Go to Microsoft 365 Admin Center → Manage user accounts → Grant themselves
+                                access to the user's OneDrive → Access user's
+                                OneDrive
+                                files and folders</p>
+                            <div class="hoop-note">✅ <strong>Fully logged and auditable</strong></div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="key-point">
+                        <p><strong>Bottom Line:</strong> There's no "secret button" in Teams that lets Global Admins
+                            browse everyone's files. Any access requires leaving Teams and using separate admin tools
+                            that leave clear audit trails.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simplified Access Methods Table -->
+        <div class="access-scenarios">
+            <h2 class="icon-file">Access Methods: Front-End vs Back-End</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                This quick walkthrough exposes a common myth: that a Global Admin can use the Teams Files tab to view
-                everyone's documents.
+                This table shows the fundamental difference between what Global Admins can do in Teams versus what
+                requires separate admin tools.
             </p>
 
-            <div class="demo-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Open Microsoft Teams</h3>
-                    <p>The Global Admin signs into Teams via the web browser — same interface as any regular user.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Go to the Files Tab</h3>
-                    <p>They click on the “Files” tab in the navigation panel expecting broad visibility.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Enter a Search Term</h3>
-                    <p>They search for a known file that belongs to someone else — not shared with them.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Result: <span style="color: crimson;">Access Denied</span></h3>
-                    <p>The Global Admin sees <strong>no results</strong>. The search is permission-scoped. They only see
-                        files they personally have access to.</p>
-                </div>
-
-
-            </div>
             <div class="highlight-box">
-                <h3>Key Takeaway</h3>
-                <p><strong>Being a Global Administrator does not override file permissions in Teams.</strong> The Files
-                    tab only shows files:</p>
-                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: #2c3e50;">
-                    <li>They uploaded</li>
-                    <li>They own</li>
-                    <li>That have been explicitly shared with them</li>
-                </ul>
-                <p>Teams is just a front-end for SharePoint and OneDrive — and both enforce strict access controls, even
-                    for Global Admins.</p>
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Where They Access Files</th>
+                            <th>What They Can See</th>
+                            <th>Audit Trail</th>
+                            <th>Key Point</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Teams (Front-End)</strong></td>
+                            <td>Only their own files + files shared with them</td>
+                            <td>Standard user activity logs</td>
+                            <td><span class="icon-no">No special access</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Admin Tools (Back-End)</strong></td>
+                            <td>Any files (with proper tools)</td>
+                            <td><span class="icon-yes">Fully logged & auditable</span></td>
+                            <td><span class="icon-yes">Requires deliberate action</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 1rem;"><strong>Key Point:</strong> There's no "secret search" in Teams. Any access
+                    to other files requires leaving Teams and using separate admin tools that leave clear audit trails.
+                </p>
             </div>
-
-
-
         </div>
 
-
+        <!-- Consolidated Audit Trail Section -->
         <div class="evidence-section">
             <h2 class="icon-audit">Evidence and Audit Trails</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Any time a Global Administrator accesses data, Microsoft 365 creates audit records — especially in the
-                Unified Audit Log.
-            </p>
-
-            <div class="evidence-grid">
-                <div class="evidence-item">
-                    <div class="evidence-icon audit-log"></div>
-                    <h3>Unified Audit Log</h3>
-                    <p>The primary record of all admin actions — shows file access, site visits, logins, permission
-                        changes, and more.</p>
-                </div>
-
-                <div class="evidence-item">
-                    <div class="evidence-icon ediscovery"></div>
-                    <h3>eDiscovery Logs</h3>
-                    <p>If data was accessed via eDiscovery or Content Search, those search and export actions are also
-                        fully logged.</p>
-                </div>
-
-                <div class="evidence-item">
-                    <div class="evidence-icon security" style="opacity: 0.5;"></div>
-                    <h3>Security Center <small>(less relevant)</small></h3>
-                    <p>Focuses on threats and anomalies — useful for detecting malicious behavior, but not normal admin
-                        access.</p>
-                </div>
-
-                <div class="evidence-item">
-                    <div class="evidence-icon compliance" style="opacity: 0.5;"></div>
-                    <h3>Compliance Center <small>(less relevant)</small></h3>
-                    <p>Used for setting policies and reviewing logs — not a source of audit data itself.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="demo-section">
-            <h2 class="icon-chart">Microsoft 365 Unified Audit Log – The Complete Record</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Every action taken by a Global Administrator is recorded in the Unified Audit Log, provided auditing is
-                enabled and the organization holds the appropriate Microsoft 365 license (such as E3 or E5). These logs
-                cannot be modified or deleted. While audit logging can technically be disabled, doing so is extremely
-                rare, auditable, and would itself raise compliance concerns.
+                Any time a Global Administrator accesses data, Microsoft 365 creates comprehensive audit records.
             </p>
 
             <div class="main-content">
@@ -190,8 +232,6 @@
                         <li><strong>Password resets</strong> – When admin passwords are changed</li>
                         <li><strong>Admin center access</strong> – Every login to administrative interfaces</li>
                         <li><strong>API calls</strong> – All programmatic access to data</li>
-                        <li><strong>Teams activities</strong> – Administrative actions in Teams</li>
-                        <li><strong>SharePoint changes</strong> – Site access and modifications</li>
                     </ul>
                 </div>
 
@@ -204,8 +244,6 @@
                         <li><strong>Action Type</strong> – Specific operation performed</li>
                         <li><strong>Resource Accessed</strong> – Which file, site, or data was accessed</li>
                         <li><strong>Client Application</strong> – What tool or interface was used</li>
-                        <li><strong>Result</strong> – Whether the action succeeded or failed</li>
-                        <li><strong>Session ID</strong> – Links related actions together</li>
                     </ul>
                 </div>
             </div>
@@ -213,22 +251,10 @@
             <div class="highlight-box">
                 <h3 class="icon-lightbulb">Why This Matters</h3>
                 <p>If a Global Administrator accessed files through any legitimate means, there would be a complete
-                    audit trail showing:</p>
-                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: #2c3e50;">
-                    <li>Exactly when they accessed the files</li>
-                    <li>What specific files they accessed</li>
-                    <li>What tool they used to access them</li>
-                    <li>Where they accessed them from (IP address)</li>
-                    <li>Whether the access was successful</li>
-                </ul>
-                <p style="margin-top: 1rem; font-weight: bold;">
-                    This audit log cannot be modified or deleted — not even by Global Administrators. It provides a
-                    transparent and tamper-proof record of access.
-                </p>
-                <p style="margin-top: 0.5rem;">
-                    Disabling audit logging requires deliberate administrative action and is itself recorded. Any such
-                    change would typically trigger compliance scrutiny.
-                </p>
+                    audit trail showing exactly when, what, and how they accessed the files. This audit log cannot be
+                    modified or deleted — not even by Global Administrators.</p>
+                <p style="margin-top: 1rem;"><strong>Important:</strong> Global Administrator actions are retained in
+                    audit logs for 180 days, regardless of your Microsoft 365 license level.</p>
                 <p style="margin-top: 1rem;">
                     <a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance"
                         target="_blank">
@@ -237,223 +263,22 @@
             </div>
         </div>
 
-
-
-        <div class="access-scenarios">
-            <h2 class="icon-file">Access Scenarios: How a Global Admin Can View Files</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                These are the deliberate steps a Global Administrator would need to take to access content - all of
-                which are fully audited
-            </p>
-
-            <!-- Simplified Summary Table -->
-            <div class="highlight-box">
-                <h2 class="icon-table">Summary: How Can Files Be Accessed?</h2>
-                <p>This table explains, in plain terms, the common methods someone might use to access files — and
-                    whether it’s logged, allowed, or appropriate.</p>
-
-                <table class="summary-table">
-                    <thead>
-                        <tr>
-                            <th>Access Method</th>
-                            <th>Needs Admin Role?</th>
-                            <th>Audit Trail?</th>
-                            <th>Legitimate?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Teams File Search</td>
-                            <td><span class="icon-no">No</span></td>
-                            <td>N/A (Permission limited)</td>
-                            <td><span class="icon-yes">Yes</span></td>
-                        </tr>
-                        <tr>
-                            <td>SharePoint/OneDrive Browsing</td>
-                            <td><span class="icon-no">No (if files are shared)</span></td>
-                            <td><span class="icon-limited">Limited</span></td>
-                            <td><span class="icon-yes">Yes</span></td>
-                        </tr>
-                        <tr>
-                            <td>eDiscovery Search</td>
-                            <td><span class="icon-yes">Yes</span></td>
-                            <td><span class="icon-yes">Fully Logged</span></td>
-                            <td><span class="icon-yes">Yes</span></td>
-                        </tr>
-                        <tr>
-                            <td>Add Self to Site</td>
-                            <td><span class="icon-yes">Yes</span></td>
-                            <td><span class="icon-yes">Fully Logged</span></td>
-                            <td><span class="icon-yes">Yes</span></td>
-                        </tr>
-                        <tr>
-                            <td>Reset User Password & Sign In</td>
-                            <td><span class="icon-yes">Yes</span></td>
-                            <td><span class="icon-warning">Partially Logged</span></td>
-                            <td><span class="icon-no">Risky</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <p style="margin-top: 1rem;"><strong>Key Point:</strong> No file access method is secret —
-                    everything leaves a record or requires sharing or elevated permissions.</p>
-            </div>
-
-            <!-- Collapsible Full Technical Table -->
-            <details style="margin-top: 2rem;">
-                <summary style="cursor: pointer; font-weight: bold; font-size: 1.1rem;">
-                    View Full Technical Table (For IT & Admins)
-                </summary>
-                <div style="margin-top: 1rem;">
-
-                    <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                        These are the deliberate steps a Global Administrator would need to take to access content - all
-                        of
-                        which are fully audited
-                    </p>
-                    <table class="scenarios-table">
-
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>Steps Required</th>
-                                <th>Audit Trail</th>
-                                <th>Use Case</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>eDiscovery/Content Search</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1rem;">
-                                        <li>Access Microsoft Purview Compliance Center</li>
-                                        <li>Create content search</li>
-                                        <li>Define search criteria</li>
-                                        <li>Export results</li>
-                                    </ul>
-                                </td>
-                                <td><span class="audit-status logged">Fully Logged</span></td>
-                                <td>Legal compliance, investigations</td>
-                            </tr>
-                            <tr>
-                                <td><strong>SharePoint Admin Center</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1rem;">
-                                        <li>Access SharePoint Admin Center</li>
-                                        <li>Navigate to specific site</li>
-                                        <li>Add self as site admin</li>
-                                        <li>Access site content</li>
-                                    </ul>
-                                </td>
-                                <td><span class="audit-status logged">Fully Logged</span></td>
-                                <td>Site management, troubleshooting</td>
-                            </tr>
-                            <tr>
-                                <td><strong>OneDrive Admin Center</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1rem;">
-                                        <li>Access OneDrive Admin Center</li>
-                                        <li>Select user account</li>
-                                        <li>Access user's OneDrive</li>
-                                        <li>Browse files and folders</li>
-                                    </ul>
-                                </td>
-                                <td><span class="audit-status logged">Fully Logged</span></td>
-                                <td>User support, data recovery</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Microsoft Graph API</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1rem;">
-                                        <li>Register application</li>
-                                        <li>Grant admin consent</li>
-                                        <li>Use API (e.g. Files.Read.All) with delegated or application permissions</li>
-                                        <li>Access data programmatically</li>
-                                    </ul>
-                                </td>
-                                <td><span class="audit-status logged">Fully Logged</span></td>
-                                <td>Automation, custom applications</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Password Reset & Sign-in</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1rem;">
-                                        <li>Reset user password</li>
-                                        <li>Sign in as user</li>
-                                        <li>Access user's files</li>
-                                        <li>Sign out and restore password</li>
-                                    </ul>
-                                </td>
-                                <td><span class="audit-status partial">Partially Logged</span></td>
-                                <td>Emergency access (not recommended)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Manual Folder Browsing</strong></td>
-                                <td>
-                                    <ul style="margin: 0; padding-left: 1rem;">
-                                        <li>Browse SharePoint or Teams Files tab</li>
-                                        <li>Attempt search using search bar</li>
-                                    </ul>
-                                </td>
-                                <td><span class="audit-status none">Logged as standard user activity (no elevated
-                                        access)</span>
-                                </td>
-                                <td>Standard user experience only; limited to existing permissions</td>
-                            </tr>
-
-
-                        </tbody>
-
-                    </table>
-                </div>
-            </details>
-
-
-            <div class="highlight-box">
-                <h3 class="icon-lightbulb">Key Points About These Methods</h3>
-                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: #2c3e50;">
-                    <li><strong>All require deliberate action</strong> – No accidental or hidden access is possible</li>
-                    <li><strong>All leave audit trails</strong> – Every admin action is recorded in the Unified Audit
-                        Log or relevant service</li>
-                    <li><strong>Only admin actions require elevated privileges</strong> – Standard Teams or SharePoint
-                        browsing follows user-level permissions</li>
-                    <li><strong>Standard browsing is still logged</strong> – Even when not performing admin actions,
-                        Global Admin activity is tracked as normal user activity</li>
-                    <li><strong>None of these methods involve Teams search</strong> – Searching in Teams does not
-                        provide access beyond existing file permissions</li>
-                </ul>
-            </div>
-
-
+        <!-- What This Means Section -->
+        <div class="highlight-box">
+            <h3>What This Means</h3>
+            <p>If someone claims a Global Admin accessed their files through Teams, either:</p>
+            <ul style="margin: 1rem 0; padding-left: 1rem; color: #2c3e50; text-align: left;">
+                <li>The files were already shared with the admin, or</li>
+                <li>The admin used proper administrative tools (which would be logged), or</li>
+                <li>The claim is incorrect</li>
+            </ul>
         </div>
 
-        <div class="conclusion">
-            <h2 class="icon-target">Key Takeaway</h2>
-            <p>
-                The accusation that a Global Administrator can simply browse through user files via the Teams interface
-                is <strong>technically impossible</strong>.
-                Microsoft 365's security model prevents this type of access, and any legitimate administrative access
-                would be fully logged and traceable.
-            </p>
-
-            <div class="highlight-box">
-                <h3>What This Means</h3>
-                <p>If someone claims a Global Admin accessed their files through Teams, either:</p>
-                <ul style="margin: 1rem 0; padding-left: 1rem; color: #2c3e50; text-align: left;">
-                    <li>The files were already shared with the admin, or</li>
-                    <li>The admin used proper administrative tools (which would be logged), or</li>
-                    <li>The claim is incorrect</li>
-                </ul>
-            </div>
-        </div>
-
+        <!-- Simplified Resources -->
         <div class="resources">
-            <h2> Official Microsoft Documentation</h2>
+            <h2>Official Microsoft Documentation</h2>
             <p>
                 These official Microsoft resources support the statements made throughout this page.
-                They explain how file access, admin roles, Teams/SharePoint integration, and audit logs
-                work across Microsoft 365. These links provide clarity and transparency for compliance,
-                IT, and HR teams.
             </p>
             <ul>
                 <li>
@@ -469,18 +294,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://learn.microsoft.com/en-us/compliance/regulatory/gdpr-data-subject-requests"
-                        target="_blank">
-                        Responding to Subject Access Requests – Microsoft’s GDPR compliance features
-                    </a>
-                </li>
-                <li>
-                    <a href="https://learn.microsoft.com/en-us/microsoft-365/community/should-i-store-my-files-in-teams-or-sharepoint-an-understanding-of-behind-the-scenes"
-                        target="_blank">
-                        Where Teams Files Live – SharePoint & OneDrive storage explained
-                    </a>
-                </li>
-                <li>
                     <a href="https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles"
                         target="_blank">
                         Microsoft 365 Admin Roles and Permissions – detailed explanation of roles like Global Admin
@@ -491,163 +304,57 @@
                         Teams Roles and Permissions – breakdown of who can do what in Teams
                     </a>
                 </li>
-                <li>
-                    <a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/audit-log-retention-policies"
-                        target="_blank">
-                        Audit Log Retention Policies – explains how long logs are kept per license (F1, E3, etc.)
-                    </a>
-                </li>
-                <li>
-                    <a href="https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide"
-                        target="_blank">
-                        Activity Reports in the Microsoft 365 Admin Center – for compliance and admin transparency
-                    </a>
-                </li>
             </ul>
         </div>
 
+        <!-- Simplified Glossary -->
+        <details style="margin-top: 2rem;">
+            <summary style="cursor: pointer; font-weight: bold; font-size: 1.1rem;">
+                Glossary of Technical Terms
+            </summary>
+            <div style="margin-top: 1rem;">
+                <div class="glossary-grid">
+                    <div class="glossary-item">
+                        <h3>Global Administrator</h3>
+                        <p>The highest level of administrative access in Microsoft 365. Can manage all aspects of the
+                            organisation's Microsoft 365 environment, but still follows permission-based restrictions
+                            for
+                            accessing user data.</p>
+                    </div>
 
-        <div class="glossary">
-            <h2 class="icon-book">Glossary of Technical Terms</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Definitions of technical terms used throughout this page to help non-technical readers
-            </p>
+                    <div class="glossary-item">
+                        <h3>eDiscovery</h3>
+                        <p>Electronic discovery - a legal process for finding, collecting, and producing electronic
+                            information for legal cases. In Microsoft 365, this is done through specialized tools that
+                            search across all content while maintaining legal compliance.</p>
+                    </div>
 
-            <div class="glossary-grid">
-                <div class="glossary-item">
-                    <h3>Global Administrator</h3>
-                    <p>The highest level of administrative access in Microsoft 365. Can manage all aspects of the
-                        organization's Microsoft 365 environment, but still follows permission-based restrictions for
-                        accessing user data.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/add-users/about-admin-roles"
-                            target="_blank">📖 Microsoft Docs: About admin roles</a></p>
-                </div>
+                    <div class="glossary-item">
+                        <h3>Unified Audit Log</h3>
+                        <p>Microsoft 365's central record of all user and administrator activities. Records who did
+                            what,
+                            when, where, and how. This log cannot be modified or deleted by administrators and serves as
+                            a
+                            permanent record.</p>
+                    </div>
 
-                <div class="glossary-item">
-                    <h3>eDiscovery</h3>
-                    <p>Electronic discovery - a legal process for finding, collecting, and producing electronic
-                        information for legal cases. In Microsoft 365, this is done through specialized tools that
-                        search across all content while maintaining legal compliance.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/ediscovery"
-                            target="_blank">📖 Microsoft Docs: eDiscovery in Microsoft 365</a></p>
-                </div>
+                    <div class="glossary-item">
+                        <h3>Permission-based Access</h3>
+                        <p>A security model where users can only access files and content they have been explicitly
+                            given
+                            permission to see. Even administrators must follow these rules unless they use special
+                            administrative tools.</p>
+                    </div>
 
-                <div class="glossary-item">
-                    <h3>Content Search</h3>
-                    <p>A Microsoft 365 tool that allows administrators to search across emails, documents, and other
-                        content across the entire organization. All searches are logged and require proper permissions.
-                    </p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/content-search"
-                            target="_blank">📖 Microsoft Docs: Content Search</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Microsoft Graph API</h3>
-                    <p>A programming interface that allows applications to access Microsoft 365 data. Think of it as a
-                        way for software to "talk" to Microsoft 365 services. All API access is logged and requires
-                        explicit permissions.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/graph/overview" target="_blank">📖 Microsoft Docs:
-                            Microsoft Graph overview</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Unified Audit Log</h3>
-                    <p>Microsoft 365's central record of all user and administrator activities. Records who did what,
-                        when, where, and how. This log cannot be modified or deleted by administrators and serves as a
-                        permanent record.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance"
-                            target="_blank">📖 Microsoft Docs: Search the audit log</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>SharePoint</h3>
-                    <p>Microsoft's web-based collaboration platform where Teams files are stored. Each Teams channel has
-                        its own SharePoint site where files are actually stored behind the scenes.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/sharepoint/sharepoint-online" target="_blank">📖
-                            Microsoft Docs: SharePoint Online</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>OneDrive</h3>
-                    <p>Microsoft's personal file storage service. Files shared in Teams chats (not channels) are stored
-                        in users' OneDrive accounts.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/onedrive/plan-onedrive-enterprise" target="_blank">📖
-                            Microsoft Docs: OneDrive for Business</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Permission-based Access</h3>
-                    <p>A security model where users can only access files and content they have been explicitly given
-                        permission to see. Even administrators must follow these rules unless they use special
-                        administrative tools.</p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Audit Trail</h3>
-                    <p>A chronological record of all activities and actions taken in a system. Shows who accessed what,
-                        when, and how, providing a complete history for security and compliance purposes.</p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Microsoft Purview</h3>
-                    <p>Microsoft's comprehensive data governance and compliance platform. Includes tools for eDiscovery,
-                        content search, and data protection that administrators use for legitimate business purposes.
-                    </p>
-                    <p><a href="https://learn.microsoft.com/en-us/purview/purview" target="_blank">📖 Microsoft Docs:
-                            Microsoft Purview</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>API (Application Programming Interface)</h3>
-                    <p>A set of rules that allows different software applications to communicate with each other. In
-                        Microsoft 365, APIs are used to access data programmatically, but all access is logged and
-                        requires proper permissions.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/graph/use-the-api" target="_blank">📖 Microsoft Docs:
-                            Use the Microsoft Graph API</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Subject Access Request (SAR)</h3>
-                    <p>A legal request for an individual to access their personal data held by an organization. In
-                        Microsoft 365, these must be processed using proper compliance tools, not manual file browsing.
-                    </p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/responding-to-data-subject-requests"
-                            target="_blank">📖 Microsoft Docs: Responding to data subject requests</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Permission Trimming</h3>
-                    <p>A security feature that automatically filters search results to only show content the user has
-                        permission to access. This applies to all users, including administrators, when using standard
-                        interfaces.</p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Admin Center</h3>
-                    <p>Web-based administrative interfaces where Global Administrators can manage Microsoft 365
-                        services. Examples include SharePoint Admin Center, OneDrive Admin Center, and Microsoft 365
-                        Admin Center.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/admin-center-overview"
-                            target="_blank">📖 Microsoft Docs: Microsoft 365 admin center</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Compliance Center</h3>
-                    <p>Microsoft's centralized location for managing data governance, compliance policies, and reviewing
-                        audit logs. Used for setting up and monitoring compliance requirements.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/compliance/microsoft-365-compliance-center"
-                            target="_blank">📖 Microsoft Docs: Microsoft 365 compliance center</a></p>
-                </div>
-
-                <div class="glossary-item">
-                    <h3>Security Center</h3>
-                    <p>Microsoft's security monitoring and threat detection platform. Focuses on identifying suspicious
-                        activities and security threats rather than normal administrative access.</p>
-                    <p><a href="https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/office-365-security-center"
-                            target="_blank">📖 Microsoft Docs: Microsoft 365 security center</a></p>
+                    <div class="glossary-item">
+                        <h3>Front End vs Back End</h3>
+                        <p>Front end refers to user-facing applications like Teams, Outlook, and SharePoint. Back end
+                            refers to administrative tools and interfaces where Global Admins actually manage the
+                            system.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </details>
     </div>
 </body>
 

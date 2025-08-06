@@ -1,0 +1,11 @@
+for chatGPT these are the things we want information on:
+
+That the 3.5 model is trained on data only up to the year 2021
+
+What it means for a Large language Model to be trained on data.
+
+That if you dont have a OpenAI account meaning you wont have access to chat GPT 4 or the most latest version which has access to making "web-calls" or asking questions of the internet and current documents and data as oppossed to the 3.5 version.
+
+The concept of halucinations and how the 3.5 version is essentially "guessing" when it doesnt have the current up to date correct information like the chat GPT 4 would.
+
+The importance of well structured and designed prompts and questions to get back good quality answers that can be trusted.

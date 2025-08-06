@@ -1,0 +1,22 @@
+This is a question that was aked of chat gpt when logged out therefore the model used must have been 3.5.
+
+Can we use this as an example on the chat GPT page to demonstrate how to do a "bad" chatgpt interaction and why this is bad and how we could have made it a good one. Can we also explain why the results cannot be trusted please.
+
+In a Microsoft Purview search, if it says a file was accessed, what does that mean?
+
+In Microsoft Purview, if a file is shown as "accessed" in an audit or content search, it typically means that someone interacted with the file in a way that reads or opens it. Specifically, "accessed" can refer to:
+
+Common actions that count as "access":
+• Opening a file in SharePoint, OneDrive, or Teams (e.g., viewing a Word document or Excel file).
+• Previewing a file in the browser or within Microsoft 365.
+• Downloading the file, which triggers a read action.
+• Syncing a file via OneDrive (automatic or manu kne that reads file contents).
+• Using the file in an app (e.g., embedded file in a Teams message that is viewed).
+• Sharing a link and then someone using that link to view the file.
+
+
+Actions that do not necessarily count as "access":
+• Merely seeing the file listed in a folder (no preview or open).
+• Hovering over a link or file name.
+• Being granted permissions (but not using them).
+• Indexing by Microsoft search (sometimes excluded, but can be context-dependent).

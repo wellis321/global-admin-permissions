@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>ChatGPT Basics - Understanding Versions and Limitations</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ChatGPT Basics</h1>
+            <p>Understanding ChatGPT versions, limitations, and how to get better results</p>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="index.html" class="nav-link">Global Admin Rights</a>
+            <a href="chatgpt-basics.html" class="nav-link active">ChatGPT Basics</a>
+            <a href="purview-reports.html" class="nav-link">Purview Reports</a>
+        </div>
+
+        <div class="page-intro">
+            <p><em>For anyone using ChatGPT — here's what you need to know about different versions, their limitations,
+                    and how to get the most reliable answers.</em></p>
+        </div>
+
+        <div class="access-flowchart">
+            <h3>ChatGPT Version Comparison</h3>
+            <div class="flow-row">
+                <div class="flow-box">
+                    <h4>GPT-3.5 (Free)</h4>
+                    <p>Trained on data before Jan 2022</p>
+                    <div class="no-access">📅 Limited to early 2022</div>
+                </div>
+                <div class="flow-arrow">⬇</div>
+                <div class="flow-box">
+                    <h4>GPT-4 (Paid)</h4>
+                    <p>More recent training + web access</p>
+                    <div class="yes-access">🌐 Current Info</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Takeaway - Simplified -->
+        <div class="conclusion">
+            <h2 class="icon-target">Key Takeaway</h2>
+            <p>
+                <strong>ChatGPT-3.5 is trained only on data before January 2022 and will "guess" about current
+                    events.</strong>
+                For up-to-date information, you need a paid OpenAI account to access GPT-4 with web browsing
+                capabilities.
+            </p>
+        </div>
+
+        <!-- What "Trained on Data" Actually Means -->
+        <div class="main-content">
+            <div class="card">
+                <h2>🧠 What "Trained on Data" Actually Means</h2>
+                <p>
+                    Understanding how Large Language Models (LLMs) work helps you use them more effectively:
+                </p>
+                <ul>
+                    <li><strong>Pattern recognition, not knowledge</strong><br>
+                        (The AI learns patterns from text but doesn't truly "know" facts like humans do.)
+                    </li>
+                    <li><strong>Statistical predictions</strong><br>
+                        (It predicts what words should come next based on patterns it has seen before.)
+                    </li>
+                    <li><strong>No real-time updates</strong><br>
+                        (Once trained, the model is "frozen" and cannot learn new information.)
+                    </li>
+                    <li><strong>Quality depends on training data</strong><br>
+                        (The accuracy and usefulness depend on the quality and recency of the data it was trained on.)
+                    </li>
+                </ul>
+                <div class="warning">
+                    <strong>Important:</strong> Think of it like having read millions of books up to a certain date,
+                    then never being able to read anything new.
+                </div>
+            </div>
+            <div class="card">
+                <h2>📅 GPT-3.5 Training Cutoff: Before January 2022</h2>
+                <p>
+                    <strong>Critical Limitation:</strong> ChatGPT-3.5 (the free version) was trained on data only before
+                    January 2022. This means:
+                </p>
+                <ul>
+                    <li><strong>No knowledge of events after early 2022</strong><br>
+                        (It doesn't know about recent news, current events, or developments since early 2022.)
+                    </li>
+                    <li><strong>Outdated information on many topics</strong><br>
+                        (Technology, politics, science, and other rapidly changing fields may have outdated
+                        information.)
+                    </li>
+                    <li><strong>Will "guess" about current topics</strong><br>
+                        (When asked about recent events, it may provide plausible-sounding but incorrect information.)
+                    </li>
+                    <li><strong>Limited awareness of new products/services</strong><br>
+                        (It won't know about new software, apps, or services released after early 2022.)
+                    </li>
+                </ul>
+                <div class="warning">
+                    <strong>Important:</strong> Always verify information about current events, recent developments, or
+                    anything that might have changed since early 2022.
+                </div>
+            </div>
+        </div>
+
+        <!-- Microsoft Documentation and GPT-3.5 -->
+        <section id="microsoft-docs">
+            <div class="explanation">
+                <h2>Microsoft Documentation and GPT-3.5: Critical Limitations</h2>
+                <p>
+                    <strong>Important Fact:</strong> GPT-3.5 has NO access to official Microsoft Azure documentation.
+                    This is not a gap in knowledge - it's a complete absence of authoritative Microsoft documentation.
+                </p>
+                <p>
+                    <strong>Why This Matters:</strong> Many users assume ChatGPT knows everything about Microsoft
+                    products, but GPT-3.5 has zero knowledge of official Microsoft documentation due to licensing and
+                    partnership timing.
+                </p>
+                <p class="analogy">
+                    <em>Think of it like asking someone who's never read the official instruction manual for a complex
+                        machine - they might have heard about it from others, but they don't have the authoritative
+                        information.</em>
+                </p>
+            </div>
+
+            <div class="comparison">
+                <div class="column">
+                    <h3>What GPT-3.5 Was Trained On</h3>
+                    <ul>
+                        <li>Public websites (Wikipedia, StackOverflow, Reddit)</li>
+                        <li>Publicly accessible programming documentation</li>
+                        <li>Open-source documentation (not behind logins)</li>
+                        <li>General discussions about technology</li>
+                        <li>No proprietary or subscription-only content</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>What GPT-3.5 Was NOT Trained On</h3>
+                    <ul>
+                        <li><strong>Official Microsoft Azure documentation (learn.microsoft.com)</strong></li>
+                        <li><strong>Microsoft Purview official guides</strong></li>
+                        <li><strong>Any Microsoft documentation due to licensing restrictions</strong></li>
+                        <li>Gated or subscription-only content</li>
+                        <li>Current Microsoft service updates</li>
+                        <li>Proprietary Microsoft resources</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="access-reality">
+                <h3>What This Means for Microsoft Technologies</h3>
+                <p>
+                    <strong>No Official Knowledge:</strong> GPT-3.5 has zero access to official Microsoft documentation.
+                    Any knowledge comes from public discussions, not authoritative Microsoft sources.
+                </p>
+
+                <div class="info-box">
+                    <p><strong>Key Point:</strong> GPT-3.5 will provide plausible-sounding but incorrect information
+                        about Microsoft services because it has no access to official documentation.</p>
+                </div>
+
+                <div class="hoops-explanation">
+                    <h3>Risks When Using GPT-3.5 for Microsoft Questions</h3>
+
+                    <div class="disclaimer-box">
+                        <p><strong>Note:</strong> These limitations apply specifically to GPT-3.5. GPT-4 with web
+                            browsing can access current Microsoft documentation.</p>
+                    </div>
+
+                    <div class="hoops-grid">
+                        <div class="hoop">
+                            <h5>1. No Official Documentation Access</h5>
+                            <p>GPT-3.5 has never seen official Microsoft documentation due to licensing restrictions</p>
+                            <div class="hoop-note">🚫 <strong>Complete absence</strong></div>
+                        </div>
+                        <div class="hoop">
+                            <h5>2. Hallucinated Information</h5>
+                            <p>Will make up plausible-sounding but incorrect Azure commands, features, and procedures
+                            </p>
+                            <div class="hoop-note">❌ <strong>Fabricated details</strong></div>
+                        </div>
+                        <div class="hoop">
+                            <h5>3. Public Discussion Knowledge Only</h5>
+                            <p>Any knowledge comes from public forums, not authoritative Microsoft sources</p>
+                            <div class="hoop-note">💬 <strong>Unreliable sources</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="key-point">
+                        <p><strong>Bottom Line:</strong> Always verify Microsoft-specific answers against official
+                            documentation at learn.microsoft.com, especially for Azure, Purview, or other Microsoft
+                            services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hoops-explanation">
+                <h3>The Solution: Registered Account with GPT-4</h3>
+                <p>
+                    <strong>For Trustworthy Microsoft Information:</strong> The limitations above explain exactly why
+                    you need a registered OpenAI account to get reliable answers about current Microsoft technologies.
+                </p>
+
+                <div class="info-box">
+                    <p><strong>Key Point:</strong> GPT-4 with web browsing can access current Microsoft documentation
+                        live, while GPT-3.5 (free version) cannot.</p>
+                </div>
+
+                <div class="hoops-grid">
+                    <div class="hoop">
+                        <h5>1. Free ChatGPT (GPT-3.5)</h5>
+                        <p>No access to current Microsoft docs, may provide outdated or incorrect information</p>
+                        <div class="hoop-note">❌ <strong>Not trustworthy</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>2. Paid ChatGPT (GPT-4)</h5>
+                        <p>Can access current Microsoft documentation through web browsing</p>
+                        <div class="hoop-note">✅ <strong>Current information</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>3. Registered Account Required</h5>
+                        <p>You must be logged in with a paid account to access GPT-4 and web browsing</p>
+                        <div class="hoop-note">💳 <strong>$20/month investment</strong></div>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <p><strong>Bottom Line:</strong> If you need trustworthy, current information about Microsoft
+                        technologies (like the Purview example below), you must use a registered account with GPT-4 and
+                        web browsing enabled. The free GPT-3.5 version simply cannot provide reliable Microsoft
+                        documentation.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real Example Analysis -->
+        <div class="access-reality">
+            <h3>Real Example: Why ChatGPT-3.5 Responses Can't Be Trusted</h3>
+            <p>
+                <strong>Problem:</strong> Here's an actual question asked to ChatGPT-3.5 (when logged out) and its
+                response, demonstrating why the results cannot be trusted.
+            </p>
+
+            <div class="info-box">
+                <p><strong>Question Asked:</strong> "In a Microsoft Purview search, if it says a file was accessed, what
+                    does that mean?"</p>
+            </div>
+
+            <div class="hoops-explanation">
+                <h3>ChatGPT-3.5's Response (Why It's Wrong)</h3>
+
+                <div class="disclaimer-box">
+                    <p><strong>Note:</strong> This response was generated by ChatGPT-3.5, which was trained before
+                        January 2022. Microsoft Purview was still relatively new at that time.</p>
+                </div>
+
+                <div
+                    style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 1.5rem; margin: 1rem 0;">
+                    <h4 style="color: #856404; margin-bottom: 1rem;">❌ ChatGPT-3.5's Incorrect Response:</h4>
+                    <p style="color: #856404; margin-bottom: 1rem;"><em>"In Microsoft Purview, if a file is shown as
+                            'accessed' in an audit or content search, it typically means that someone interacted with
+                            the file in a way that reads or opens it. Specifically, 'accessed' can refer to:</em></p>
+                    <p style="color: #856404; margin-bottom: 1rem;"><em>Common actions that count as 'access':<br>
+                            • Opening a file in SharePoint, OneDrive, or Teams (e.g., viewing a Word document or Excel
+                            file).<br>
+                            • Previewing a file in the browser or within Microsoft 365.<br>
+                            • Downloading the file, which triggers a read action.<br>
+                            • Syncing a file via OneDrive (automatic or manual that reads file contents).<br>
+                            • Using the file in an app (e.g., embedded file in a Teams message that is viewed).<br>
+                            • Sharing a link and then someone using that link to view the file.</em></p>
+                </div>
+
+                <div class="hoops-grid">
+                    <div class="hoop">
+                        <h5>1. Outdated Information</h5>
+                        <p>ChatGPT-3.5 was trained before Microsoft Purview was widely understood and documented</p>
+                        <div class="hoop-note">📅 <strong>Pre-2022 knowledge</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>2. Incorrect Assumptions</h5>
+                        <p>It assumes "accessed" means user interaction, when it often means system-level access</p>
+                        <div class="hoop-note">❌ <strong>Wrong interpretation</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>3. Missing Context</h5>
+                        <p>Doesn't distinguish between user actions and automated system processes</p>
+                        <div class="hoop-note">⚠️ <strong>Incomplete picture</strong></div>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <p><strong>Why This Response Cannot Be Trusted:</strong> ChatGPT-3.5 is providing information based
+                        on its pre-2022 training, which doesn't reflect current understanding of Microsoft Purview. It's
+                        essentially "guessing" about a topic it doesn't have current knowledge about.</p>
+                </div>
+            </div>
+
+            <div class="hoops-explanation">
+                <h3>How to Make This a Better Interaction</h3>
+
+                <div class="hoops-grid">
+                    <div class="hoop">
+                        <h5>1. Acknowledge Limitations</h5>
+                        <p>Start by asking: "What do you know about Microsoft Purview as of early 2022?"</p>
+                        <div class="hoop-note">📋 <strong>Set expectations</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>2. Ask for Current Sources</h5>
+                        <p>Request: "Can you provide links to official Microsoft documentation about this topic?"</p>
+                        <div class="hoop-note">🔗 <strong>Verify information</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>3. Use GPT-4 with Web Access</h5>
+                        <p>For current information, use GPT-4 with web browsing enabled</p>
+                        <div class="hoop-note">🌐 <strong>Current data</strong></div>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <p><strong>Better Approach:</strong> "I need to understand Microsoft Purview audit reports. Since
+                        you were trained before 2022, can you explain what you know about file access logging from that
+                        time, and then suggest where I should look for current, official Microsoft documentation on this
+                        topic?"</p>
+                </div>
+            </div>
+
+            <div class="hoops-explanation">
+                <h3>The Best Solution: Use a Registered Account</h3>
+                <p>
+                    <strong>What Should Have Happened:</strong> For a question about current Microsoft technologies like
+                    Purview, the user should have used a registered OpenAI account to access GPT-4 with web browsing
+                    capabilities.
+                </p>
+
+                <div class="info-box">
+                    <p><strong>Key Point:</strong> When asking about current technologies, recent developments, or
+                        topics that have evolved since early 2022, always use GPT-4 with web access rather than the free
+                        GPT-3.5 version.</p>
+                </div>
+
+                <div class="hoops-grid">
+                    <div class="hoop">
+                        <h5>1. Register for OpenAI Account</h5>
+                        <p>Create a paid account ($20/month) to access GPT-4 and web browsing features</p>
+                        <div class="hoop-note">💳 <strong>Paid access required</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>2. Enable Web Browsing</h5>
+                        <p>Use GPT-4 with web browsing to search for current Microsoft documentation</p>
+                        <div class="hoop-note">🌐 <strong>Current information</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>3. Get Accurate Answers</h5>
+                        <p>Receive up-to-date, verified information about current technologies</p>
+                        <div class="hoop-note">✅ <strong>Reliable results</strong></div>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <p><strong>Bottom Line:</strong> For questions about current technologies, recent events, or
+                        anything that might have changed since early 2022, the free ChatGPT-3.5 version is not
+                        sufficient. Invest in a paid account to get accurate, current information.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Understanding Hallucinations -->
+        <div class="access-scenarios">
+            <h2 class="icon-file">Understanding Hallucinations</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Why ChatGPT-3.5 "guesses" and how this affects the reliability of its answers.
+            </p>
+
+            <div class="highlight-box">
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>What Happens</th>
+                            <th>Why It Happens</th>
+                            <th>How to Spot It</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ChatGPT makes up information</strong></td>
+                            <td>It doesn't have current data, so it predicts what sounds plausible</td>
+                            <td><span class="icon-warning">Check dates and verify facts</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Provides outdated information</strong></td>
+                            <td>Training cutoff means it only knows pre-January 2022 information</td>
+                            <td><span class="icon-no">Look for recent developments</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Confidently states incorrect facts</strong></td>
+                            <td>It doesn't know what it doesn't know</td>
+                            <td><span class="icon-limited">Cross-reference with reliable sources</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mixes old and new information</strong></td>
+                            <td>Patterns from old data combined with guessing</td>
+                            <td><span class="icon-yes">Verify each claim separately</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 1rem;"><strong>Key Point:</strong> GPT-3.5 is essentially "guessing" when it
+                    doesn't have current information, which is why verification is crucial.
+                </p>
+            </div>
+        </div>
+
+        <!-- Prompt Design Section -->
+        <div class="evidence-section">
+            <h2 class="icon-audit">The Importance of Well-Structured Prompts</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                How to design better prompts and questions to get high-quality, trustworthy answers from ChatGPT.
+            </p>
+
+            <div
+                style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 1.5rem; margin-bottom: 2rem;">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem;">💡 What is a "Prompt"?</h3>
+                <p style="color: #2c3e50; margin-bottom: 1rem;">
+                    <strong>A "prompt" is simply the question or instruction you give to ChatGPT.</strong> Think of it
+                    like giving directions to a very knowledgeable but literal person who only knows what you tell them.
+                </p>
+                <p style="color: #2c3e50; margin-bottom: 1rem;">
+                    <strong>Good prompts are:</strong> Specific, detailed, and include context about what you're trying
+                    to achieve.
+                </p>
+                <p style="color: #2c3e50;">
+                    <strong>Bad prompts are:</strong> Vague, too broad, or don't provide enough information for ChatGPT
+                    to give you a useful answer.
+                </p>
+            </div>
+
+            <div class="main-content">
+                <div class="card">
+                    <h2 class="icon-search">Good Prompt Design</h2>
+                    <ul>
+                        <li><strong>Be specific and detailed</strong> – Include context, requirements, and constraints
+                        </li>
+                        <li><strong>Ask for step-by-step explanations</strong> – Request structured responses with clear
+                            sections</li>
+                        <li><strong>Specify the format you want</strong> – Ask for lists, tables, code, or specific
+                            structures</li>
+                        <li><strong>Include examples</strong> – Show what kind of response you're looking for</li>
+                        <li><strong>Ask for verification</strong> – Request sources or ask it to explain its reasoning
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="icon-audit">Avoiding Poor Prompts</h2>
+                    <ul>
+                        <li><strong>Vague questions</strong> – "Tell me about technology" is too broad</li>
+                        <li><strong>Leading questions</strong> – Don't suggest the answer you want</li>
+                        <li><strong>Complex multi-part questions</strong> – Break them down into smaller parts</li>
+                        <li><strong>Assuming current knowledge</strong> – Remember the training cutoff</li>
+                        <li><strong>Not specifying context</strong> – Provide relevant background information</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3 class="icon-lightbulb">Example: Good vs Poor Prompts</h3>
+                <p><strong>Poor:</strong> "What's the best way to do this?"</p>
+                <p><strong>Better:</strong> "I'm a beginner developer working on a Python web application. What are the
+                    best practices for handling user authentication in early 2022? Please provide step-by-step
+                    instructions
+                    with code examples."</p>
+                <p style="margin-top: 1rem;"><strong>Poor:</strong> "Tell me about AI"</p>
+                <p><strong>Better:</strong> "I'm writing a business report about AI adoption in healthcare. Can you
+                    provide a summary of the main AI technologies used in medical diagnosis as of early 2022, with
+                    examples of
+                    their applications and limitations?"</p>
+            </div>
+        </div>
+
+        <!-- Best Practices -->
+        <div class="resources">
+            <h2>Best Practices for Reliable Results</h2>
+            <p>
+                Follow these guidelines to get the most trustworthy answers from ChatGPT.
+            </p>
+            <ul>
+                <li>
+                    <a href="https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api"
+                        target="_blank">
+                        OpenAI's Prompt Engineering Best Practices – Official guidance
+                    </a>
+                </li>
+                <li>
+                    <a href="https://platform.openai.com/docs/models/gpt-4" target="_blank">
+                        GPT-4 Model Documentation – Understanding capabilities and limitations
+                    </a>
+                </li>
+                <li>
+                    <a href="https://platform.openai.com/docs/guides/web-browsing" target="_blank">
+                        Web Browsing with GPT-4 – How to enable and use web access
+                    </a>
+                </li>
+                <li>
+                    <a href="https://help.openai.com/en/articles/6783457-chatgpt-general-faq" target="_blank">
+                        ChatGPT General FAQ – Common questions about usage and limitations
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Glossary -->
+        <div class="glossary" style="margin-top: 2rem;">
+            <h2 class="icon-book">Glossary of ChatGPT Terms</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Key terms to understand when working with ChatGPT
+            </p>
+            <div class="glossary-grid">
+                <div class="glossary-item">
+                    <h3>Training Cutoff</h3>
+                    <p>The date when the AI model's training data ends. GPT-3.5's cutoff is before January 2022, meaning
+                        it has no
+                        knowledge of events or information after that date.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <h3>Hallucination</h3>
+                    <p>When an AI generates information that sounds plausible but is actually incorrect or made up.
+                        Common when the AI doesn't have current information.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <h3>Web Browsing</h3>
+                    <p>A GPT-4 feature that allows the AI to search the internet and access current information,
+                        overcoming the training cutoff limitation.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <h3>Prompt Engineering</h3>
+                    <p>The practice of designing effective prompts and questions to get better, more reliable responses
+                        from AI language models.</p>
+                </div>
+
+                <div class="glossary-item">
+                    <h3>Large Language Model (LLM)</h3>
+                    <p>An AI system trained on massive amounts of text data to understand and generate human language.
+                        ChatGPT is an example of an LLM.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

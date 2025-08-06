@@ -1,0 +1,35 @@
+I want to create a clear, single-page website that helps people understand how to read a Microsoft Purview audit report — especially when it shows that a user has "Accessed file" entries.
+
+The page should:
+
+Explain in plain language what "Accessed file" means
+
+Describe why it appears (e.g. system searches, previews, background scans)
+
+Clarify the difference between system access and user actions (like opening or downloading)
+
+Show how to interpret IP addresses, such as Microsoft service IPs vs. user IPs
+
+Address GDPR implications and data routing (e.g. files accessed via Microsoft servers outside the EU)
+
+Emphasize that "Accessed file" ≠ proof that someone opened the file
+
+Include a FAQ section to handle common questions like:
+
+"Did the user open the file?"
+
+"Why are there only 10 rows when I saw more files?"
+
+"What does SharePointFileOperation mean?"
+
+"Is this a GDPR problem?"
+
+Bonus features (optional):
+
+A visual example of a Purview row with explanations for each column
+
+A downloadable PDF summary for compliance teams
+
+A glossary of key terms (e.g., Activity, Operation, ClientIP)
+
+The tone should be calm, factual, and reassuring, suitable for internal IT, compliance, or legal teams trying to understand what Purview reports do and don’t show.

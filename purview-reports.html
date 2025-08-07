@@ -384,7 +384,7 @@
                             A: It usually means Microsoft's system processed the file for indexing, scanning, or
                             compliance - not that someone opened it.</li>
                         <li><strong>Q: How do I know if someone actually opened a file?</strong><br>
-                            A: Look for actions like "Downloaded file," "Modified file," or user IP addresses from
+                            A: Look for activities like "FileDownloaded," "FileModified," or user IP addresses from
                             office/home networks, not Microsoft datacenters.</li>
                         <li><strong>Q: Why do I see the same file accessed multiple times?</strong><br>
                             A: This is normal - different Microsoft services may process the same file for search
@@ -402,9 +402,9 @@
                             A: This is normal! Microsoft's global datacenter network may process files from multiple
                             locations for redundancy and performance. This doesn't mean users from different countries
                             accessed the file.</li>
-                        <li><strong>Q: What should I do if I see suspicious activity?</strong><br>
-                            A: First, check if the IP addresses are Microsoft service IPs and if the user account is a
-                            system account. Real user activity will have different patterns.</li>
+                        <li><strong>Q: How do I know if this is normal system activity?</strong><br>
+                            A: Look for Microsoft service IPs, system accounts, and multiple datacenter access. These
+                            patterns indicate normal automated processes, not user activity.</li>
                         <li><strong>Q: What if I need to prove someone accessed a file?</strong><br>
                             A: Look for user-specific actions, user IP addresses, and realistic timing patterns.
                             Multiple datacenter access usually indicates system activity.</li>
@@ -442,8 +442,7 @@
                 <h3>Understanding GDPR Compliance</h3>
 
                 <div class="disclaimer-box">
-                    <p><strong>Note:</strong> This information is for general guidance. Consult with your legal team for
-                        specific GDPR compliance requirements in your jurisdiction.</p>
+                    <p><strong>Note:</strong> This information is for general guidance.</p>
                 </div>
 
                 <div class="hoops-grid">
@@ -520,8 +519,9 @@
             <div class="glossary-grid">
                 <div class="glossary-item">
                     <h3>Activity</h3>
-                    <p>The specific action that was performed, such as "Accessed file," "Downloaded file," or "Modified
-                        file." The type of activity helps determine if it was user-initiated or system-generated.</p>
+                    <p>The specific action that was performed, such as "FileAccessed," "FileDownloaded," or
+                        "FileModified."
+                        The type of activity helps determine if it was user-initiated or system-generated.</p>
                 </div>
 
                 <div class="glossary-item">
@@ -538,7 +538,7 @@
                 </div>
 
                 <div class="glossary-item">
-                    <h3>Accessed File</h3>
+                    <h3>FileAccessed</h3>
                     <p>An audit entry indicating that a file was accessed by the system or a user. This does not
                         necessarily mean the file was opened or downloaded by a person.</p>
                 </div>

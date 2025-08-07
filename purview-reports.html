@@ -27,25 +27,36 @@
                     show — especially when dealing with "Accessed file" entries.</em></p>
         </div>
 
+        <!-- What is Purview? -->
+        <div class="explanation">
+            <h2>What is Microsoft Purview?</h2>
+            <p>
+                <strong>Microsoft Purview</strong> is Microsoft's unified data governance service that helps
+                organizations
+                understand, manage, and govern their data across the entire data estate. One of its key features is
+                <strong>audit logging</strong> - it records all activities that happen with your organization's files
+                and data.
+            </p>
+            <p>
+                When you run a search or view audit reports in Purview, you'll see entries like "Accessed file" that can
+                be
+                confusing if you don't understand what they actually mean.
+            </p>
+        </div>
+
         <div class="access-flowchart">
-            <h3>How Purview Audit Data Works</h3>
+            <h3>Purview Report Interpretation</h3>
             <div class="flow-row">
                 <div class="flow-box">
                     <h4>System Activity</h4>
-                    <p>Microsoft services and background processes</p>
-                    <div class="no-access">🔄 Automated Scans</div>
+                    <p>Automated processes and background scans</p>
+                    <div class="no-access">🔄 "Accessed file" entries</div>
                 </div>
                 <div class="flow-arrow">⬇</div>
                 <div class="flow-box">
-                    <h4>Audit Logging</h4>
-                    <p>All activities are recorded with timestamps</p>
-                    <div class="yes-access">📊 Log Generation</div>
-                </div>
-                <div class="flow-arrow">⬇</div>
-                <div class="flow-box">
-                    <h4>Purview Reports</h4>
-                    <p>Filtered and formatted audit data</p>
-                    <div class="yes-access">📋 Report Display</div>
+                    <h4>User Activity</h4>
+                    <p>Actual human interactions with files</p>
+                    <div class="yes-access">👤 "Downloaded file" entries</div>
                 </div>
             </div>
         </div>
@@ -92,80 +103,331 @@
                 </div>
             </div>
             <div class="card">
-                <h2>❌ What "Accessed file" Does NOT Mean</h2>
+                <h2>🔍 How to Identify System vs User Activity</h2>
                 <p>
-                    It's crucial to understand what "Accessed file" entries do not indicate:
+                    Use these practical indicators to distinguish between automated system processes and actual user
+                    actions:
                 </p>
                 <ul>
-                    <li><strong>Someone opened the file</strong><br>
-                        (The user did not necessarily view, read, or interact with the file content.)
+                    <li><strong>Microsoft Service IPs</strong><br>
+                        (IP addresses in ranges like 4.x.x.x, 52.x.x.x, 158.x.x.x indicate Microsoft datacenters and
+                        automated processes.)
                     </li>
-                    <li><strong>File was downloaded</strong><br>
-                        (The file was not necessarily saved to a user's device or local storage.)
+                    <li><strong>Multiple datacenter access</strong><br>
+                        (Same file accessed from Toronto, Queretaro, and other locations simultaneously = system
+                        activity.)
                     </li>
-                    <li><strong>User-initiated action</strong><br>
-                        (The activity was likely automated by Microsoft services, not triggered by a person.)
+                    <li><strong>System user accounts</strong><br>
+                        (User accounts like "system@" or service accounts indicate automated processes.)
                     </li>
-                    <li><strong>Data breach or unauthorized access</strong><br>
-                        (These are normal system operations that occur as part of Microsoft 365's functionality.)
+                    <li><strong>SharePointFileOperation</strong><br>
+                        (This operation type typically indicates background indexing, scanning, or compliance
+                        processes.)
                     </li>
-                    <li><strong>Privacy violation</strong><br>
-                        (System access is part of the service you're using and is covered by Microsoft's privacy
-                        policies.)
+                    <li><strong>Same file, multiple entries</strong><br>
+                        (Multiple "Accessed file" entries for the same document on the same day = system processing.)
                     </li>
                 </ul>
                 <div class="warning">
-                    <strong>Important:</strong> Don't assume "Accessed file" means human interaction with the file
-                    content.
+                    <strong>Key Rule:</strong> If you see the same file "accessed" from multiple Microsoft datacenters
+                    on the same day, this is automated system activity, not human users.
                 </div>
             </div>
         </div>
 
-        <!-- Understanding IP Addresses -->
-        <section id="ip-addresses">
-            <div class="explanation">
-                <h2>Understanding IP Addresses in Purview Reports</h2>
-                <p>
-                    IP addresses in Purview reports can help you distinguish between user activity and system activity.
-                </p>
-                <p>
-                    <strong>Microsoft Service IPs:</strong> These are IP addresses owned by Microsoft that indicate
-                    automated system processes.
-                </p>
-                <p class="analogy">
-                    <em>Think of it like the difference between a delivery truck (Microsoft service) visiting your
-                        building versus a person (user) entering your office. Both are recorded, but they serve very
-                        different purposes.</em>
-                </p>
-            </div>
 
-            <div class="comparison">
-                <div class="column">
-                    <h3>Microsoft Service IPs</h3>
-                    <ul>
-                        <li>Indicate automated system processes</li>
-                        <li>Often appear in ranges (e.g., 13.107.x.x)</li>
-                        <li>Associated with background scans and indexing</li>
-                        <li>Normal part of Microsoft 365 operation</li>
-                        <li>Not user-initiated activity</li>
-                    </ul>
+
+
+
+        <!-- Real Purview Report Data -->
+        <div class="access-scenarios">
+            <h2 class="icon-file">Real Purview Report Analysis</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Let's analyse actual Purview report data to understand what "Accessed file" entries really mean.
+            </p>
+
+            <div class="highlight-box">
+                <div
+                    style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 1rem; margin-bottom: 1rem;">
+                    <h4 style="margin-bottom: 1rem; color: #2c3e50;">Sample Purview Report Data:</h4>
+                    <div style="overflow-x: auto;">
+                        <table
+                            style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.85rem; margin-bottom: 1rem;">
+                            <thead>
+                                <tr style="background: #e9ecef; border-bottom: 2px solid #dee2e6;">
+                                    <th style="padding: 0.5rem; text-align: left; border: 1px solid #dee2e6;">Date</th>
+                                    <th style="padding: 0.5rem; text-align: left; border: 1px solid #dee2e6;">IP Address
+                                    </th>
+                                    <th style="padding: 0.5rem; text-align: left; border: 1px solid #dee2e6;">Email</th>
+                                    <th style="padding: 0.5rem; text-align: left; border: 1px solid #dee2e6;">Audit
+                                        Operation
+                                    </th>
+                                    <th style="padding: 0.5rem; text-align: left; border: 1px solid #dee2e6;">Activity
+                                    </th>
+                                    <th style="padding: 0.5rem; text-align: left; border: 1px solid #dee2e6;">File Name
+                                    </th>
+                                    <th style="padding: 0.5rem; text-align: left; border: 1px solid #dee2e6;">File Path
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">52.108.224.17</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FIleOne.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/ANamedYear/SomeDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">20.68.123.31</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FIleOne.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/ANamedYear/SomeDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">52.108.189.10</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FIleTwo.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/ANamedYear/AnotherDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">127.0.0.1</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FIleThree.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/ANamedYear/MonthDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">20.90.191.9</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FIleFour.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/NewFolder/DifferentDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">127.0.0.1</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FileFive.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/NamedYear/DifferentDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">4.205.197.38</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FileSix.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/NamedYear/SomeNewDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">52.108.42.38</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FileSix.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/NamedYear/SomeNewDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">158.23.86.109</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FileSix.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from "Shared
+                                        Documents/AFolderName/NamedYear/SomeNewDate"</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">May 10, 2025</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">52.108.147.27</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">me@work.org.uk</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">SharePointFileOperation</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed file</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">FileSeven.docx</td>
+                                    <td style="padding: 0.5rem; border: 1px solid #dee2e6;">Accessed from
+                                        "AFolderName/Annonymous P drive"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="column">
-                    <h3>User IP Addresses</h3>
-                    <ul>
-                        <li>Show actual user activity</li>
-                        <li>May be from office, home, or mobile networks</li>
-                        <li>Associated with direct file interactions</li>
-                        <li>Indicate human-initiated actions</li>
-                        <li>Can be traced to specific users</li>
-                    </ul>
+
+                <h4 style="margin-top: 1.5rem; color: #2c3e50;">What This Table Tells Us:</h4>
+                <div class="hoops-grid">
+                    <div class="hoop">
+                        <h5>1. IP Addresses</h5>
+                        <p>All IPs (4.205.197.38, 52.108.42.38, 158.23.86.109, 52.108.147.27) are Microsoft service IPs
+                            from different datacenters</p>
+                        <div class="hoop-note">🏢 <strong>Microsoft services</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>2. SharePointFileOperation</h5>
+                        <p>This operation type indicates automated SharePoint processes like indexing, scanning, or
+                            compliance checks</p>
+                        <div class="hoop-note">🔄 <strong>System process</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>3. "Accessed file" Action</h5>
+                        <p>This doesn't mean someone opened the file - it means the system processed it for background
+                            operations</p>
+                        <div class="hoop-note">📊 <strong>System access</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>4. Same Date & Time</h5>
+                        <p>All entries are from May 10, 2025 - this is a Teams search report showing when the search was
+                            performed</p>
+                        <div class="hoop-note">⏰ <strong>Search timestamp</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>5. Multiple Files Processed</h5>
+                        <p>Multiple files (FileOne through FileSeven) were processed simultaneously, indicating a broad
+                            system scan or search operation</p>
+                        <div class="hoop-note">📁 <strong>Batch processing</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>6. Consistent User Account</h5>
+                        <p>All entries show the same user (me@work.org.uk) but from different IPs - this indicates the
+                            user initiated a search that triggered system processing</p>
+                        <div class="hoop-note">👤 <strong>Search initiator</strong></div>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <p><strong>Key Insight:</strong> This table shows a Teams search that was performed on May 10, 2025.
+                        The multiple "Accessed file" entries represent Microsoft's system processing the search results
+                        across different datacenters - not users actually opening the meeting minutes file.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- GDPR and Data Routing -->
+        <!-- More Real Examples -->
         <div class="access-reality">
-            <h3>GDPR Implications and Data Routing</h3>
+            <h3>More Real Examples from the Report</h3>
+            <p>
+                <strong>Pattern Analysis:</strong> Looking at the full report reveals clear patterns that distinguish
+                system activity from user activity.
+            </p>
+
+            <div class="info-box">
+                <p><strong>Key Observation:</strong> The same file appears multiple times with different Microsoft
+                    datacenter IPs, all on the same date. This is impossible for human users but normal for automated
+                    processes.</p>
+            </div>
+
+            <div class="hoops-explanation">
+                <h3>Common Patterns in Real Purview Data</h3>
+
+                <div class="hoops-grid">
+                    <div class="hoop">
+                        <h5>1. Multiple Datacenter Access</h5>
+                        <p>Same file accessed from Toronto, Queretaro, and other Microsoft datacenters simultaneously
+                        </p>
+                        <div class="hoop-note">🌐 <strong>System distribution</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>2. Microsoft IP Ranges</h5>
+                        <p>All IPs are in Microsoft's ranges (4.x.x.x, 52.x.x.x, 158.x.x.x) indicating automated
+                            services</p>
+                        <div class="hoop-note">🏢 <strong>Microsoft services</strong></div>
+                    </div>
+                    <div class="hoop">
+                        <h5>3. Same User, Multiple IPs</h5>
+                        <p>One user account associated with multiple datacenter IPs on the same day</p>
+                        <div class="hoop-note">👤 <strong>System account</strong></div>
+                    </div>
+                </div>
+
+                <div class="key-point">
+                    <p><strong>Bottom Line:</strong> When you see the same file "accessed" from multiple Microsoft
+                        datacenters on the same day, this is automated system activity, not human users opening the
+                        file.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="evidence-section">
+            <h2 class="icon-audit">Frequently Asked Questions</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Common questions about interpreting Microsoft Purview reports and "Accessed file" entries.
+            </p>
+
+            <div class="main-content">
+                <div class="card">
+                    <h2 class="icon-search">Common Questions</h2>
+                    <ul>
+                        <li><strong>Q: What does "Accessed file" actually mean?</strong><br>
+                            A: It usually means Microsoft's system processed the file for indexing, scanning, or
+                            compliance - not that someone opened it.</li>
+                        <li><strong>Q: How do I know if someone actually opened a file?</strong><br>
+                            A: Look for actions like "Downloaded file," "Modified file," or user IP addresses from
+                            office/home networks, not Microsoft datacenters.</li>
+                        <li><strong>Q: Why do I see the same file accessed multiple times?</strong><br>
+                            A: This is normal - different Microsoft services may process the same file for search
+                            indexing, security scanning, or compliance checks.</li>
+                        <li><strong>Q: Can I trust these reports for compliance purposes?</strong><br>
+                            A: Yes, but you need to understand the difference between system and user activity. System
+                            access is normal and expected.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2 class="icon-audit">Understanding Patterns</h2>
+                    <ul>
+                        <li><strong>Q: What if I see the same file accessed from different countries?</strong><br>
+                            A: This is normal! Microsoft's global datacenter network may process files from multiple
+                            locations for redundancy and performance. This doesn't mean users from different countries
+                            accessed the file.</li>
+                        <li><strong>Q: What should I do if I see suspicious activity?</strong><br>
+                            A: First, check if the IP addresses are Microsoft service IPs and if the user account is a
+                            system account. Real user activity will have different patterns.</li>
+                        <li><strong>Q: What if I need to prove someone accessed a file?</strong><br>
+                            A: Look for user-specific actions, user IP addresses, and realistic timing patterns.
+                            Multiple datacenter access usually indicates system activity.</li>
+                        <li><strong>Q: How can I tell if it's system vs user access?</strong><br>
+                            A: Look for "system@" users, Microsoft IP addresses, and automated client applications.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3 class="icon-lightbulb">Key Points to Remember</h3>
+                <p><strong>System vs User:</strong> Always distinguish between automated system processes and actual
+                    user actions when interpreting audit logs.</p>
+                <p><strong>Context Matters:</strong> Consider the IP address, user account, and client application to
+                    understand the nature of the activity.</p>
+                <p><strong>Normal Operation:</strong> System access is a normal part of Microsoft 365 functionality and
+                    doesn't indicate unauthorized access.</p>
+            </div>
+        </div>
+
+        <!-- GDPR and Compliance -->
+        <div class="access-reality">
+            <h3>GDPR and Compliance Implications</h3>
             <p>
                 <strong>Data Processing:</strong> When Microsoft services access files, this data processing is covered
                 by Microsoft's GDPR compliance measures and your organization's data processing agreements.
@@ -207,113 +469,6 @@
                     <p><strong>Bottom Line:</strong> Automated system access is generally covered by existing data
                         processing agreements and serves legitimate business purposes.</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Sample Report Row -->
-        <div class="access-scenarios">
-            <h2 class="icon-file">Sample Purview Report Row</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Understanding what each column in a Purview report means helps you interpret the data correctly.
-            </p>
-
-            <div class="highlight-box">
-                <div
-                    style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 6px; padding: 1rem; margin-bottom: 1rem;">
-                    <h4 style="margin-bottom: 1rem; color: #2c3e50;">Sample Report Entry:</h4>
-                    <table style="width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.9rem;">
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 0.5rem; font-weight: bold; color: #2c3e50;">Date/Time:</td>
-                            <td style="padding: 0.5rem;">2024-01-15 14:30:22</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 0.5rem; font-weight: bold; color: #2c3e50;">User:</td>
-                            <td style="padding: 0.5rem;">system@company.com</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 0.5rem; font-weight: bold; color: #2c3e50;">Activity:</td>
-                            <td style="padding: 0.5rem;">Accessed file</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 0.5rem; font-weight: bold; color: #2c3e50;">IP Address:</td>
-                            <td style="padding: 0.5rem;">13.107.18.254</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid #ddd;">
-                            <td style="padding: 0.5rem; font-weight: bold; color: #2c3e50;">File:</td>
-                            <td style="padding: 0.5rem;">/Shared Documents/Report.docx</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0.5rem; font-weight: bold; color: #2c3e50;">Client App:</td>
-                            <td style="padding: 0.5rem;">SharePoint Online</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <h4 style="margin-top: 1.5rem; color: #2c3e50;">What This Tells Us:</h4>
-                <ul style="margin-top: 1rem;">
-                    <li><strong>System Activity:</strong> The user "system@company.com" indicates this is an automated
-                        process</li>
-                    <li><strong>Microsoft IP:</strong> IP address 13.107.18.254 is in Microsoft's range, confirming
-                        system access</li>
-                    <li><strong>Background Process:</strong> SharePoint Online client app suggests indexing or preview
-                        generation</li>
-                    <li><strong>Not User Action:</strong> This was not a person opening the file</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="evidence-section">
-            <h2 class="icon-audit">Frequently Asked Questions</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
-                Common questions about interpreting Microsoft Purview reports and "Accessed file" entries.
-            </p>
-
-            <div class="main-content">
-                <div class="card">
-                    <h2 class="icon-search">Report Interpretation</h2>
-                    <ul>
-                        <li><strong>Q: Did the user open the file?</strong><br>
-                            A: Not necessarily. "Accessed file" often means system-level access for indexing, scanning,
-                            or preview generation.</li>
-                        <li><strong>Q: Why are there only 10 rows when I saw more files?</strong><br>
-                            A: Purview reports may be filtered or limited. Check your date range, user filters, and
-                            activity types.</li>
-                        <li><strong>Q: What does SharePointFileOperation mean?</strong><br>
-                            A: This indicates a SharePoint-specific operation, often automated system processes like
-                            indexing or compliance scanning.</li>
-                        <li><strong>Q: Is this a GDPR problem?</strong><br>
-                            A: Generally no. System access is covered by data processing agreements and serves
-                            legitimate business purposes.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h2 class="icon-audit">Technical Details</h2>
-                    <ul>
-                        <li><strong>Q: How can I tell if it's system vs user access?</strong><br>
-                            A: Look for "system@" users, Microsoft IP addresses, and automated client applications.</li>
-                        <li><strong>Q: Why do I see multiple entries for the same file?</strong><br>
-                            A: Different system processes may access the same file for various purposes (indexing,
-                            scanning, previews).</li>
-                        <li><strong>Q: Can I filter out system activity?</strong><br>
-                            A: Yes, you can filter by user (exclude system@ accounts) or by specific activity types.
-                        </li>
-                        <li><strong>Q: How long are these logs kept?</strong><br>
-                            A: Audit logs are typically retained for 90 days to 1 year, depending on your Microsoft 365
-                            license.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <h3 class="icon-lightbulb">Key Points to Remember</h3>
-                <p><strong>System vs User:</strong> Always distinguish between automated system processes and actual
-                    user actions when interpreting audit logs.</p>
-                <p><strong>Context Matters:</strong> Consider the IP address, user account, and client application to
-                    understand the nature of the activity.</p>
-                <p><strong>Normal Operation:</strong> System access is a normal part of Microsoft 365 functionality and
-                    doesn't indicate unauthorized access.</p>
             </div>
         </div>
 
@@ -370,9 +525,10 @@
                 </div>
 
                 <div class="glossary-item">
-                    <h3>Operation</h3>
+                    <h3>Audit Operation</h3>
                     <p>The technical operation performed by the system, such as "SharePointFileOperation" or
-                        "ExchangeItemOperation." Operations provide more detail about the specific system process.</p>
+                        "ExchangeItemOperation." Audit Operations provide more detail about the specific system process.
+                    </p>
                 </div>
 
                 <div class="glossary-item">
